@@ -1,0 +1,20 @@
+# сборка
+/build/
+/grabercam
+/grab_one
+/grab_video
+
+# кадры и отчёты snap/record/bench
+*.raw
+*.pgm
+*.png
+*.avi
+*.mp4
+*.json
+*.txt
+!/CMakeLists.txt
+
+# cmake в каталоге исходников
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
