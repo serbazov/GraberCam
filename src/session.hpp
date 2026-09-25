@@ -33,6 +33,7 @@ struct Opt {
 	bool json_set = false;
 	bool no_json = false;
 	std::string gentl = "/opt/magewell/usr/lib";
+	std::string ssd_dir;
 	std::vector<std::string> pos;
 };
 

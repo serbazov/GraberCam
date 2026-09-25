@@ -17,8 +17,10 @@ build/%.o: $(EASYCAP)/src/%.cpp
 build/easycap.a: $(SDK_OBJ)
 	ar rcs $@ $(SDK_OBJ)
 
+READLINE_LIB ?= -l:libreadline.so.8
+
 grabercam: src/main.cpp src/session.cpp src/session.hpp build/easycap.a
-	$(CXX) $(CXXFLAGS) -I$(EASYCAP)/include -o $@ src/main.cpp src/session.cpp build/easycap.a -ldl -lpthread -lrt
+	$(CXX) $(CXXFLAGS) -I$(EASYCAP)/include -o $@ src/main.cpp src/session.cpp build/easycap.a -ldl -lpthread -lrt $(READLINE_LIB)
 
 clean:
 	rm -rf build grabercam

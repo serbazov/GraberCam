@@ -2,23 +2,46 @@
 
 #include <algorithm>
 #include <atomic>
+#include <cctype>
 #include <chrono>
 #include <cerrno>
+#include <cstdlib>
 #include <csignal>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
+#include <dirent.h>
 #include <fcntl.h>
+#include <fstream>
 #include <limits>
 #include <numeric>
 #include <string>
+#include <sys/stat.h>
+#include <sys/sysmacros.h>
 #include <unistd.h>
 #include <vector>
+
+extern "C" {
+char* readline(const char* prompt);
+void add_history(const char* line);
+void using_history(void);
+int read_history(const char* filename);
+int write_history(const char* filename);
+int history_truncate_file(const char* filename, int nlines);
+typedef char* (*rl_compentry_func_t)(const char*, int);
+char** rl_completion_matches(const char* text, rl_compentry_func_t entry_func);
+typedef char** (*rl_completion_func_t)(const char*, int, int);
+extern rl_completion_func_t rl_attempted_completion_function;
+extern int rl_attempted_completion_over;
+extern char* rl_line_buffer;
+extern FILE* rl_outstream;
+}
 
 // Захват идёт через scap_get_buf / scap_back_buffer в одном потоке:
 // указатель кадра жив, пока буфер не возвращён карте, лишней копии нет.
 // discard — потолок камеры и грабера, copy — memcpy, disk — запись этого
-// буфера, sink — тот же размер блока на диск без камеры.
+// буфера, sink — тот же размер блока на текущий диск без камеры,
+// ssd — то же на смонтированный NVMe.
 
 static std::atomic<bool> g_stop{false};
 
@@ -81,6 +104,7 @@ struct Report {
 	size_t queued_last = 0;
 	bool queued_seen = false;
 	uint64_t tick_hz = 0;
+	std::string storage;
 };
 
 struct GrabRequest {
@@ -113,8 +137,9 @@ static void usage()
 		"  discard   захват, буфер сразу возвращается карте\n"
 		"  copy      плюс memcpy кадра в память\n"
 		"  disk      запись буфера SDK, write ждёт диск\n"
-		"  sink      то же без камеры, блок --bytes\n"
-		"  all       discard, copy, disk, затем sink (по умолчанию)\n"
+		"  sink      то же без камеры, блок --bytes, на cwd/диск проекта\n"
+		"  ssd       как sink, но на смонтированный NVMe (--ssd-dir)\n"
+		"  all       discard, copy, disk, sink, затем ssd (по умолчанию)\n"
 		"\n"
 		"Параметры:\n"
 		"  --card N            карта, по умолчанию 0\n"
@@ -133,17 +158,19 @@ static void usage()
 		"  -t, --seconds SEC   длительность; у bench по умолчанию 5\n"
 		"  --warmup N          кадры прогрева bench, в скорость не входят, 8\n"
 		"  --skip N            сколько кадров пропустить в snap/record, 2\n"
-		"  --bytes N           размер блока sink; в режиме all берётся размер кадра камеры\n"
+		"  --bytes N           размер блока sink/ssd; в режиме all берётся размер кадра камеры\n"
+		"  --ssd-dir PATH      каталог на NVMe для режима ssd; иначе ищется сам\n"
 		"  --json PATH         отчёт bench, по умолчанию bench.json\n"
 		"  --no-json\n"
 		"  --gentl PATH        каталог .cti, по умолчанию /opt/magewell/usr/lib\n"
 		"\n"
 		"МБ/с считаются как 10^6 байт/с. record требует -n или -t.\n"
-		"record пишет в кэш и делает fsync в конце. bench disk и sink\n"
+		"record пишет в кэш и делает fsync в конце. bench disk, sink и ssd\n"
 		"ждут диск на каждом блоке, поэтому их МБ/с — это уже пластина.\n"
 		"\n"
 		"shell поднимает линк один раз и читает команды со stdin:\n"
 		"info, get, set, snap, record, bench, help, quit.\n"
+		"В TTY: Tab — подсказки, ↑/↓ — история команд (~/.grabercam_history).\n"
 		"Флаги запуска shell — значения по умолчанию для этих команд.\n"
 		"--card, --camera, --link, --firmware, --link-wait и --gentl\n"
 		"внутри сессии не меняются. FirmwareMode, CxpLinkConfiguration,\n"
@@ -438,6 +465,9 @@ static bool parse_args(int argc, char** argv, std::string& cmd, Opt& opt)
 		} else if (arg == "--gentl") {
 			if (!take(i, argc, argv, arg.c_str(), opt.gentl))
 				return false;
+		} else if (arg == "--ssd-dir") {
+			if (!take(i, argc, argv, arg.c_str(), opt.ssd_dir))
+				return false;
 		} else if (!arg.empty() && arg[0] == '-') {
 			std::fprintf(stderr, "неизвестный параметр %s\n", arg.c_str());
 			return false;
@@ -534,6 +564,8 @@ static void print_report(const Report& rep)
 	}
 	else if (rep.payload)
 		std::printf("блок: %llu байт\n", (unsigned long long)rep.payload);
+	if (!rep.storage.empty())
+		std::printf("диск: %s\n", rep.storage.c_str());
 	if (!rep.error.empty())
 		std::printf("ошибка: %s\n", rep.error.c_str());
 	std::printf("кадры: %llu", (unsigned long long)rep.frames);
@@ -658,7 +690,9 @@ static void save_json(const std::string& path, const std::vector<Report>& report
 			std::fprintf(file, "    \"queued_min\": %zu,\n    \"queued_last\": %zu,\n",
 				rep.queued_min, rep.queued_last);
 		}
-		std::fputs("    \"output\": ", file);
+		std::fputs("    \"storage\": ", file);
+		json_escape(file, rep.storage);
+		std::fputs(",\n    \"output\": ", file);
 		json_escape(file, rep.path);
 		std::fputs("\n  }", file);
 		if (i + 1 != reports.size())
@@ -726,6 +760,265 @@ static bool write_all(int fd, const void* data, size_t size)
 	return true;
 }
 
+static std::string trim_copy(std::string text)
+{
+	while (!text.empty() && (text.back() == '\n' || text.back() == '\r' || text.back() == ' '))
+		text.pop_back();
+	size_t begin = 0;
+	while (begin < text.size() && text[begin] == ' ')
+		++begin;
+	return text.substr(begin);
+}
+
+static std::string read_sysfs(const std::string& path)
+{
+	std::ifstream in(path);
+	if (!in)
+		return {};
+	std::string line;
+	std::getline(in, line);
+	return trim_copy(line);
+}
+
+static bool parse_maj_min(const std::string& text, unsigned& maj, unsigned& min)
+{
+	unsigned a = 0;
+	unsigned b = 0;
+	if (std::sscanf(text.c_str(), "%u:%u", &a, &b) != 2)
+		return false;
+	maj = a;
+	min = b;
+	return true;
+}
+
+static std::string parent_block(std::string name)
+{
+	if (name.compare(0, 4, "nvme") == 0) {
+		auto p = name.find('p');
+		if (p != std::string::npos && p > 0 && std::isdigit(static_cast<unsigned char>(name[p - 1])))
+			return name.substr(0, p);
+		return name;
+	}
+	while (!name.empty() && std::isdigit(static_cast<unsigned char>(name.back())))
+		name.pop_back();
+	return name;
+}
+
+struct BlockDisk {
+	std::string name;
+	std::string model;
+	std::string transport;
+	bool rotational = true;
+};
+
+static BlockDisk describe_block(const std::string& name)
+{
+	BlockDisk disk;
+	disk.name = name;
+	std::string root = parent_block(name);
+	disk.model = read_sysfs("/sys/block/" + root + "/device/model");
+	if (disk.model.empty())
+		disk.model = read_sysfs("/sys/block/" + root + "/device/name");
+	std::string rota = read_sysfs("/sys/block/" + root + "/queue/rotational");
+	disk.rotational = (rota != "0");
+	if (root.compare(0, 4, "nvme") == 0)
+		disk.transport = "nvme";
+	else if (!read_sysfs("/sys/block/" + root + "/device/vendor").empty())
+		disk.transport = disk.rotational ? "sata/hdd" : "sata/ssd";
+	else
+		disk.transport = disk.rotational ? "hdd" : "ssd";
+	return disk;
+}
+
+static std::string format_storage(const BlockDisk& disk)
+{
+	std::string text = disk.name;
+	if (!disk.transport.empty())
+		text += " " + disk.transport;
+	if (!disk.model.empty())
+		text += " " + disk.model;
+	if (!disk.rotational)
+		text += " (SSD)";
+	else if (disk.transport.find("hdd") != std::string::npos || disk.rotational)
+		text += " (HDD)";
+	return text;
+}
+
+static bool block_by_dev(dev_t dev, BlockDisk& out)
+{
+	char link[256];
+	std::snprintf(link, sizeof(link), "/sys/dev/block/%u:%u", major(dev), minor(dev));
+	char target[512];
+	ssize_t n = ::readlink(link, target, sizeof(target) - 1);
+	if (n < 0)
+		return false;
+	target[n] = 0;
+	std::string path(target);
+	auto slash = path.find_last_of('/');
+	std::string name = slash == std::string::npos ? path : path.substr(slash + 1);
+	if (name.empty())
+		return false;
+	out = describe_block(name);
+	return true;
+}
+
+static std::string storage_for_path(const std::string& path)
+{
+	struct stat st {};
+	std::string probe = path;
+	if (::stat(probe.c_str(), &st) != 0) {
+		auto slash = probe.find_last_of('/');
+		if (slash == std::string::npos)
+			probe = ".";
+		else if (slash == 0)
+			probe = "/";
+		else
+			probe = probe.substr(0, slash);
+		if (::stat(probe.c_str(), &st) != 0)
+			return {};
+	}
+	BlockDisk disk;
+	if (!block_by_dev(st.st_dev, disk))
+		return {};
+	return format_storage(disk);
+}
+
+struct NvmeTarget {
+	std::string dir;
+	std::string storage;
+	std::string error;
+};
+
+static bool dir_writable(const std::string& dir)
+{
+	if (::access(dir.c_str(), W_OK) != 0)
+		return false;
+	std::string probe = dir;
+	if (!probe.empty() && probe.back() != '/')
+		probe += '/';
+	probe += ".grabercam_ssd_probe";
+	int fd = ::open(probe.c_str(), O_CREAT | O_TRUNC | O_WRONLY | O_CLOEXEC, 0644);
+	if (fd < 0)
+		return false;
+	::close(fd);
+	::unlink(probe.c_str());
+	return true;
+}
+
+static void collect_nvme_names(std::vector<std::string>& names)
+{
+	DIR* dir = ::opendir("/sys/block");
+	if (!dir)
+		return;
+	while (dirent* ent = ::readdir(dir)) {
+		if (std::strncmp(ent->d_name, "nvme", 4) == 0)
+			names.push_back(ent->d_name);
+	}
+	::closedir(dir);
+	std::sort(names.begin(), names.end());
+}
+
+static void collect_dev_nodes(const std::string& disk, std::vector<dev_t>& nodes)
+{
+	auto add = [&](const std::string& path) {
+		unsigned maj = 0;
+		unsigned min = 0;
+		if (!parse_maj_min(read_sysfs(path), maj, min))
+			return;
+		nodes.push_back(makedev(maj, min));
+	};
+	add("/sys/block/" + disk + "/dev");
+	DIR* dir = ::opendir(("/sys/block/" + disk).c_str());
+	if (!dir)
+		return;
+	while (dirent* ent = ::readdir(dir)) {
+		if (std::strncmp(ent->d_name, disk.c_str(), disk.size()) == 0)
+			add("/sys/block/" + disk + "/" + ent->d_name + "/dev");
+	}
+	::closedir(dir);
+}
+
+static NvmeTarget resolve_ssd_target(const Opt& opt)
+{
+	NvmeTarget target;
+	if (!opt.ssd_dir.empty()) {
+		if (!dir_writable(opt.ssd_dir)) {
+			target.error = "каталог --ssd-dir недоступен для записи: " + opt.ssd_dir;
+			return target;
+		}
+		target.dir = opt.ssd_dir;
+		target.storage = storage_for_path(opt.ssd_dir);
+		if (target.storage.find("nvme") == std::string::npos && target.storage.find("SSD") == std::string::npos)
+			target.storage += target.storage.empty() ? "задан --ssd-dir" : " (путь --ssd-dir)";
+		return target;
+	}
+
+	std::vector<std::string> nvmes;
+	collect_nvme_names(nvmes);
+	if (nvmes.empty()) {
+		target.error = "NVMe не найден в /sys/block";
+		return target;
+	}
+
+	std::vector<dev_t> wanted;
+	std::vector<std::string> labels;
+	for (const std::string& name : nvmes) {
+		collect_dev_nodes(name, wanted);
+		labels.push_back(format_storage(describe_block(name)));
+	}
+
+	std::ifstream mounts("/proc/self/mountinfo");
+	std::string line;
+	std::string best_dir;
+	std::string best_storage;
+	size_t best_len = 0;
+	while (std::getline(mounts, line)) {
+		unsigned id = 0;
+		unsigned parent = 0;
+		unsigned maj = 0;
+		unsigned min = 0;
+		char root[512];
+		char mnt[512];
+		if (std::sscanf(line.c_str(), "%u %u %u:%u %511s %511s", &id, &parent, &maj, &min, root, mnt) < 6)
+			continue;
+		dev_t node = makedev(maj, min);
+		bool match = false;
+		for (dev_t want : wanted) {
+			if (want == node) {
+				match = true;
+				break;
+			}
+		}
+		if (!match)
+			continue;
+		std::string dir = mnt;
+		if (!dir_writable(dir))
+			continue;
+		if (dir.size() > best_len) {
+			best_len = dir.size();
+			best_dir = dir;
+			BlockDisk disk;
+			if (block_by_dev(node, disk))
+				best_storage = format_storage(disk);
+		}
+	}
+
+	if (!best_dir.empty()) {
+		target.dir = best_dir;
+		target.storage = best_storage;
+		return target;
+	}
+
+	std::string list;
+	for (size_t i = 0; i < labels.size(); ++i) {
+		if (i)
+			list += ", ";
+		list += labels[i];
+	}
+	target.error = "NVMe есть (" + list + "), но не смонтирован — задайте --ssd-dir или смонтируйте раздел";
+	return target;
+}
+
 static std::string meta_path_for(const std::string& raw)
 {
 	std::string::size_type slash = raw.find_last_of('/');
@@ -787,6 +1080,7 @@ static int run_grab(Session& session, const GrabRequest& req, Report& rep)
 			return 5;
 		}
 		posix_fadvise(fd, 0, 0, POSIX_FADV_SEQUENTIAL);
+		rep.storage = storage_for_path(req.path);
 	}
 
 	if (!session.start(req.bufs)) {
@@ -928,11 +1222,12 @@ static int run_grab(Session& session, const GrabRequest& req, Report& rep)
 	return rc;
 }
 
-static int run_sink(const Opt& opt, const std::string& path, Report& rep)
+static int run_sink(const Opt& opt, const std::string& path, const std::string& mode_name, Report& rep)
 {
-	rep.mode = "sink";
+	rep.mode = mode_name;
 	rep.path = path;
 	rep.payload = opt.bytes;
+	rep.storage = storage_for_path(path);
 	if (opt.bytes == 0) {
 		rep.error = "размер блока 0";
 		return 2;
@@ -971,7 +1266,8 @@ static int run_sink(const Opt& opt, const std::string& path, Report& rep)
 		sample.host = write_end;
 		samples.push_back(sample);
 		if (write_end - begin > std::chrono::milliseconds(500) && (samples.size() % 4) == 0) {
-			std::fprintf(stderr, "\rsink     блоки %llu   ", (unsigned long long)samples.size());
+			std::fprintf(stderr, "\r%-8s блоки %llu   ", mode_name.c_str(),
+				(unsigned long long)samples.size());
 		}
 	}
 	std::fprintf(stderr, "\n");
@@ -1291,7 +1587,8 @@ static int cmd_record(const Opt& opt)
 static int do_bench(Session* session, const Opt& opt, bool keep)
 {
 	std::string mode = opt.mode.empty() ? "all" : opt.mode;
-	if (mode != "all" && mode != "discard" && mode != "copy" && mode != "disk" && mode != "sink") {
+	if (mode != "all" && mode != "discard" && mode != "copy" && mode != "disk"
+		&& mode != "sink" && mode != "ssd") {
 		std::fprintf(stderr, "неизвестный --mode %s\n", mode.c_str());
 		return 1;
 	}
@@ -1306,7 +1603,7 @@ static int do_bench(Session* session, const Opt& opt, bool keep)
 
 	std::vector<Report> reports;
 	int rc = 0;
-	bool camera = mode != "sink";
+	bool camera = mode != "sink" && mode != "ssd";
 	if (camera && (!session || !session->cap)) {
 		std::fprintf(stderr, "камера не открыта\n");
 		return 2;
@@ -1333,29 +1630,64 @@ static int do_bench(Session* session, const Opt& opt, bool keep)
 			rc = one;
 	};
 
+	auto fill_bytes_from_camera = [&]() {
+		if (timed.bytes_set)
+			return;
+		for (const Report& prev : reports) {
+			if (prev.payload > 0) {
+				timed.bytes = prev.payload;
+				break;
+			}
+		}
+	};
+
 	if (mode == "discard" || mode == "all")
 		run_mode("discard", "", false);
 	if (mode == "copy" || mode == "all")
 		run_mode("copy", "", false);
 	if (mode == "disk" || mode == "all")
 		run_mode("disk", disk_path, true);
-	if (!keep && session && camera && (mode == "all" || mode == "sink"))
+	if (!keep && session && camera && (mode == "all" || mode == "sink" || mode == "ssd"))
 		session->close();
 	if (mode == "sink" || mode == "all") {
-		if (!timed.bytes_set) {
-			for (const Report& prev : reports) {
-				if (prev.payload > 0) {
-					timed.bytes = prev.payload;
-					break;
-				}
-			}
-		}
+		fill_bytes_from_camera();
 		Report rep;
-		int one = run_sink(timed, sink_path, rep);
+		int one = run_sink(timed, sink_path, "sink", rep);
 		reports.push_back(rep);
 		print_report(rep);
 		if (one != 0 && rc == 0)
 			rc = one;
+	}
+	if (mode == "ssd" || mode == "all") {
+		fill_bytes_from_camera();
+		NvmeTarget nvme = resolve_ssd_target(timed);
+		Report rep;
+		rep.mode = "ssd";
+		if (!nvme.error.empty()) {
+			rep.error = nvme.error;
+			rep.storage = nvme.storage;
+			reports.push_back(rep);
+			print_report(rep);
+			if (rc == 0)
+				rc = 5;
+		} else {
+			std::string ssd_path;
+			if (mode == "ssd" && !timed.output.empty())
+				ssd_path = timed.output;
+			else {
+				ssd_path = nvme.dir;
+				if (!ssd_path.empty() && ssd_path.back() != '/')
+					ssd_path += '/';
+				ssd_path += "bench_ssd.raw";
+			}
+			int one = run_sink(timed, ssd_path, "ssd", rep);
+			if (rep.storage.empty())
+				rep.storage = nvme.storage;
+			reports.push_back(rep);
+			print_report(rep);
+			if (one != 0 && rc == 0)
+				rc = one;
+		}
 	}
 
 	bool write_json = !timed.no_json;
@@ -1363,18 +1695,20 @@ static int do_bench(Session* session, const Opt& opt, bool keep)
 		std::string json_path = timed.json_set ? timed.json : "bench.json";
 		save_json(json_path, reports);
 	}
-	std::printf("\nМБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры, sink — диск без камеры.\n");
+	std::printf("\nМБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,\n"
+		"sink — текущий диск без камеры, ssd — NVMe без камеры.\n");
 	return rc;
 }
 
 static int cmd_bench(const Opt& opt)
 {
 	std::string mode = opt.mode.empty() ? "all" : opt.mode;
-	if (mode != "all" && mode != "discard" && mode != "copy" && mode != "disk" && mode != "sink") {
+	if (mode != "all" && mode != "discard" && mode != "copy" && mode != "disk"
+		&& mode != "sink" && mode != "ssd") {
 		std::fprintf(stderr, "неизвестный --mode %s\n", mode.c_str());
 		return 1;
 	}
-	if (mode == "sink")
+	if (mode == "sink" || mode == "ssd")
 		return do_bench(nullptr, opt, false);
 	Session session;
 	if (!session.open(opt, OpenMode::CameraConfigured))
@@ -1385,15 +1719,340 @@ static int cmd_bench(const Opt& opt)
 static void shell_usage()
 {
 	std::fputs(
-		"info\n"
-		"get <feature> [--level camera|interface|device|stream]\n"
-		"set <feature> [значение]\n"
-		"snap [-o путь] [--skip N]\n"
-		"record -n N | -t SEC [-o путь]\n"
-		"bench [--mode discard|copy|disk|sink|all] [-t SEC]\n"
-		"help, quit\n"
-		"Флаги линка здесь не меняются. Ctrl+C прерывает текущую команду.\n",
+		"Команды shell (подробнее: help <команда>):\n"
+		"  info                 карта, камера, линк, размер кадра\n"
+		"  get <feature>        прочитать параметр GenICam\n"
+		"  set <feature> [val]  записать параметр или выполнить команду\n"
+		"  snap                 один кадр → .raw и .pgm\n"
+		"  record               непрерывная запись в один .raw\n"
+		"  bench                замер пропускной способности\n"
+		"  help [команда]       эта справка или описание команды\n"
+		"  quit / exit          закрыть сессию\n"
+		"\n"
+		"Tab — подсказки, ↑/↓ — история. Ctrl+C прерывает команду.\n"
+		"Флаги линка (--card, --link, …) в shell не меняются.\n",
 		stderr);
+}
+
+static bool shell_help_topic(const std::string& topic)
+{
+	std::string name = topic;
+	if (!name.empty() && name[0] == '-')
+		name.erase(0, name[1] == '-' ? 2 : 1);
+	if (name == "info") {
+		std::fputs(
+			"info — состояние карты и камеры\n"
+			"\n"
+			"Показывает имя карты, вендор/модель/серийник камеры, линк,\n"
+			"PixelFormat, размер кадра, выдержку, усиление, триггер.\n"
+			"Параметров нет.\n"
+			"\n"
+			"Пример:\n"
+			"  info\n",
+			stderr);
+		return true;
+	}
+	if (name == "get") {
+		std::fputs(
+			"get <feature> [--level camera|interface|device|stream]\n"
+			"\n"
+			"Читает параметр GenICam. По умолчанию уровень camera.\n"
+			"Имена параметров — в `grabercam -h` (длинный список) или Tab после get.\n"
+			"\n"
+			"Примеры:\n"
+			"  get DeviceTemperature\n"
+			"  get ExposureTime\n"
+			"  get CxpLinkConfiguration --level interface\n"
+			"  get PixelFormat\n",
+			stderr);
+		return true;
+	}
+	if (name == "set") {
+		std::fputs(
+			"set <feature> [значение] [--level camera|interface|device|stream]\n"
+			"\n"
+			"Пишет параметр или выполняет команду GenICam (если значения нет).\n"
+			"По умолчанию уровень camera. В shell нельзя писать FirmwareMode,\n"
+			"CxpLinkConfiguration, CxpPoCxpAuto, DeviceSelector — они поднимают линк.\n"
+			"\n"
+			"Примеры:\n"
+			"  set ExposureTime 5000\n"
+			"  set PixelFormat Mono10\n"
+			"  set TriggerMode Off\n"
+			"  set TriggerSoftware\n",
+			stderr);
+		return true;
+	}
+	if (name == "snap") {
+		std::fputs(
+			"snap [-o путь] [--skip N] [--buf N] [--timeout-ms N]\n"
+			"\n"
+			"Снимает один кадр после прогрева. Пишет .raw и рядом .pgm (для Mono8/10/12).\n"
+			"По умолчанию: frame.raw / frame.pgm, --skip 2.\n"
+			"--format/--exposure/--gain в shell задавайте через set, не флагами snap.\n"
+			"\n"
+			"Примеры:\n"
+			"  snap\n"
+			"  snap -o /mnt/nvme/shot.raw\n"
+			"  snap --skip 5\n",
+			stderr);
+		return true;
+	}
+	if (name == "record") {
+		std::fputs(
+			"record -n N | -t SEC [-o путь] [--skip N] [--buf N] [--timeout-ms N]\n"
+			"\n"
+			"Пишет непрерывный поток кадров в один .raw (нужны -n или -t).\n"
+			"Пишет через кэш ОС, fsync в конце. Для скорости без дропов нужен\n"
+			"быстрый диск или буфер в RAM (сейчас запись синхронно по кадрам\n"
+			"для disk-режима bench; record ждёт write).\n"
+			"Рядом пишется .txt с метаданными.\n"
+			"\n"
+			"Примеры:\n"
+			"  record -t 5 -o /mnt/nvme/clip.raw\n"
+			"  record -n 100\n",
+			stderr);
+		return true;
+	}
+	if (name == "bench") {
+		std::fputs(
+			"bench [--mode MODE] [-t SEC] [-n N] [--warmup N] [--bytes N]\n"
+			"      [--ssd-dir PATH] [-o PATH] [--json PATH] [--no-json]\n"
+			"\n"
+			"Замер пропускной способности. По умолчанию --mode all, -t 5.\n"
+			"\n"
+			"Режимы (--mode):\n"
+			"  discard  только захват, буфер сразу возвращается карте\n"
+			"  copy     захват + memcpy в RAM\n"
+			"  disk     захват + запись на диск текущего каталога (O_DSYNC)\n"
+			"  sink     запись блоков без камеры на cwd\n"
+			"  ssd      как sink на смонтированный NVMe\n"
+			"  all      discard → copy → disk → sink → ssd\n"
+			"\n"
+			"МБ/с = 10^6 байт/с. Отчёт в bench.json, если не --no-json.\n"
+			"\n"
+			"Примеры:\n"
+			"  bench\n"
+			"  bench --mode discard -t 3\n"
+			"  bench --mode ssd --ssd-dir /mnt/nvme\n",
+			stderr);
+		return true;
+	}
+	if (name == "help") {
+		std::fputs(
+			"help [команда]\n"
+			"\n"
+			"Без аргумента — список команд. С аргументом — справка по команде.\n"
+			"\n"
+			"Примеры:\n"
+			"  help\n"
+			"  help snap\n"
+			"  help get\n",
+			stderr);
+		return true;
+	}
+	if (name == "quit" || name == "exit") {
+		std::fputs(
+			"quit / exit — закрыть shell-сессию\n"
+			"\n"
+			"Останавливает захват, закрывает карту и GenTL. Параметров нет.\n"
+			"Ctrl+C на пустом приглашении тоже завершает сессию.\n",
+			stderr);
+		return true;
+	}
+	return false;
+}
+
+static const char* k_shell_cmds[] = {
+	"info", "get", "set", "snap", "record", "bench", "help", "quit", "exit",
+	nullptr
+};
+
+static const char* k_shell_features[] = {
+	"Width", "Height", "OffsetX", "OffsetY", "PixelFormat", "PixelSize",
+	"PixelDynamicRangeMin", "PixelDynamicRangeMax", "SensorWidth", "SensorHeight",
+	"WidthMax", "HeightMax", "PayloadSize", "TestImageSelector",
+	"AcquisitionMode", "AcquisitionStart", "AcquisitionStop", "AcquisitionFrameCount",
+	"AcquisitionFrameRate", "AcquisitionFrameRateEnable", "ResultingFrameRateAbs",
+	"AcquisitionStatusSelector", "AcquisitionStatus",
+	"TriggerSelector", "TriggerMode", "TriggerSource", "TriggerActivation",
+	"TriggerDelay", "TriggerSoftware",
+	"ExposureMode", "ExposureTime", "ShutterMode",
+	"GainSelector", "GainRaw", "AnalogGain", "ReferenceGain", "Gamma",
+	"BlackLevelSelector", "BlackLevel",
+	"BalanceWhiteAuto", "BalanceRatioSelector", "BalanceRatio",
+	"Binning", "BinningMode", "ReverseX", "ReverseY", "ReverseMode",
+	"MultipleROIEnable", "MultipleROICount", "ROISelector", "ROIOffsetY", "ROIHeight",
+	"AverageFilter", "MedianFilter", "BackgroundSubtractionEnable",
+	"FrameAveragingEnable", "FrameAveraging",
+	"PixelShiftEnable", "PixelShiftDistance", "PixelShiftPositionReset",
+	"PixelShiftMetaData", "PixelShiftUserTableCount", "PixelShiftUserTableIndex",
+	"PixelShiftUserTableValue", "PixelShiftUserTableShots",
+	"PixelShiftTriggerMode", "PixelShiftSoftwareTrigger",
+	"LineSelector", "LineMode", "LineSource", "LineFormat", "LineInverter",
+	"LineStatus", "LineStatusAll", "LineDebouncerTimeAbs",
+	"UserOutputSelector", "UserOutputValue", "UserOutputValueAll",
+	"UserSetSelector", "UserSetLoad", "UserSetSave", "UserSetDefault",
+	"DeviceScanType", "DeviceTemperatureSelector", "DeviceTemperature",
+	"DeviceHumiditySelector", "DeviceHumidity", "DeviceColdDewPoint",
+	"TECSetpoint", "TECPwm", "StatusVoltageSelector", "StatusVoltage", "DeviceReset",
+	"FanSelector", "FanMode", "FanSpeed", "FanRpm", "LedMode",
+	"NumberOfLink", "LinkSpeed", "DefaultNumberOfLink", "DefaultLinkSpeed",
+	"StartupNumberOfLink", "StartupLinkSpeed", "DeviceTapGeometry",
+	"FFCMode", "FFCSet", "FFCStatus", "FFCRefreshStatus", "FFCReloadParameter",
+	"FFCRGBEnable", "FFCRGBChannelSelector", "FFCRGBParameter",
+	"ShadingSelector", "LSCTableSelector", "LSCEnable", "ActivateShading",
+	"ReceivedTriggerCount", "AcceptedTriggerCount", "RejectedTriggerCount",
+	"FrameOutCount", "ResetCounter",
+	"SequencerMode", "SequencerSetCount", "SequencerSetSelector", "SequencerSetActive",
+	"SequencerReset", "SequencerFeatureSelector", "SequencerFeatureEnable",
+	"SequencerExposureTime", "SequencerGainRaw",
+	"SequencerBalanceRatioSelector", "SequencerBalanceRatio",
+	"SequencerFFCSet", "SequencerLSCTableSet",
+	"ConnectionReset", "MasterHostConnectionID", "StreamPacketSizeMax",
+	"Image1StreamID", "Image2StreamID", "XmlManifestSelector",
+	"TestMode", "TestErrorCountSelector", "TestErrorCount",
+	"TestPacketCountTx", "TestPacketCountRx", "ElectricalComplianceTest",
+	"FirmwareMode", "DeviceSelector", "CxpLinkConfiguration", "CxpPoCxpAuto",
+	nullptr
+};
+
+static const char* k_shell_flags[] = {
+	"--level", "--mode", "--output", "-o", "--frames", "-n", "--seconds", "-t",
+	"--warmup", "--skip", "--bytes", "--buf", "--timeout-ms", "--ssd-dir",
+	"--json", "--no-json", "--format", "--exposure", "--gain",
+	nullptr
+};
+
+static const char* k_shell_levels[] = {
+	"camera", "interface", "device", "stream", nullptr
+};
+
+static const char* k_shell_modes[] = {
+	"discard", "copy", "disk", "sink", "ssd", "all", nullptr
+};
+
+static const char* k_shell_formats[] = {
+	"Mono8", "Mono10", "Mono12", nullptr
+};
+
+static char* shell_dup(const char* text)
+{
+	size_t n = std::strlen(text) + 1;
+	char* out = static_cast<char*>(std::malloc(n));
+	if (out)
+		std::memcpy(out, text, n);
+	return out;
+}
+
+static char* shell_match_gen(const char* text, int state, const char* const* list)
+{
+	static int index = 0;
+	static size_t len = 0;
+	if (state == 0) {
+		index = 0;
+		len = std::strlen(text);
+	}
+	while (list[index]) {
+		const char* item = list[index++];
+		if (std::strncmp(item, text, len) == 0)
+			return shell_dup(item);
+	}
+	return nullptr;
+}
+
+static char* shell_cmd_gen(const char* text, int state)
+{
+	return shell_match_gen(text, state, k_shell_cmds);
+}
+
+static char* shell_feature_gen(const char* text, int state)
+{
+	return shell_match_gen(text, state, k_shell_features);
+}
+
+static char* shell_flag_gen(const char* text, int state)
+{
+	return shell_match_gen(text, state, k_shell_flags);
+}
+
+static char* shell_level_gen(const char* text, int state)
+{
+	return shell_match_gen(text, state, k_shell_levels);
+}
+
+static char* shell_mode_gen(const char* text, int state)
+{
+	return shell_match_gen(text, state, k_shell_modes);
+}
+
+static char* shell_format_gen(const char* text, int state)
+{
+	return shell_match_gen(text, state, k_shell_formats);
+}
+
+static std::string shell_token_before(int point)
+{
+	if (!rl_line_buffer || point <= 0)
+		return {};
+	int end = point;
+	while (end > 0 && !std::isspace(static_cast<unsigned char>(rl_line_buffer[end - 1])))
+		--end;
+	int begin = end;
+	while (begin > 0 && std::isspace(static_cast<unsigned char>(rl_line_buffer[begin - 1])))
+		--begin;
+	int start = begin;
+	while (start > 0 && !std::isspace(static_cast<unsigned char>(rl_line_buffer[start - 1])))
+		--start;
+	if (start >= begin)
+		return {};
+	return std::string(rl_line_buffer + start, rl_line_buffer + begin);
+}
+
+static std::string shell_first_word()
+{
+	if (!rl_line_buffer)
+		return {};
+	const char* p = rl_line_buffer;
+	while (*p && std::isspace(static_cast<unsigned char>(*p)))
+		++p;
+	const char* start = p;
+	while (*p && !std::isspace(static_cast<unsigned char>(*p)))
+		++p;
+	return std::string(start, p);
+}
+
+static char** shell_completion(const char* text, int start, int /*end*/)
+{
+	rl_attempted_completion_over = 1;
+	if (start == 0)
+		return rl_completion_matches(text, shell_cmd_gen);
+
+	std::string prev = shell_token_before(start);
+	std::string cmd = shell_first_word();
+	if (prev == "--level")
+		return rl_completion_matches(text, shell_level_gen);
+	if (prev == "--mode")
+		return rl_completion_matches(text, shell_mode_gen);
+	if (prev == "--format" || prev == "PixelFormat")
+		return rl_completion_matches(text, shell_format_gen);
+	if (text[0] == '-')
+		return rl_completion_matches(text, shell_flag_gen);
+	if (cmd == "get" || cmd == "set") {
+		if (prev == "get" || prev == "set" || prev.empty())
+			return rl_completion_matches(text, shell_feature_gen);
+	}
+	if (cmd == "help")
+		return rl_completion_matches(text, shell_cmd_gen);
+	return nullptr;
+}
+
+static std::string shell_history_path()
+{
+	const char* home = std::getenv("HOME");
+	if (!home || !*home)
+		return {};
+	return std::string(home) + "/.grabercam_history";
 }
 
 static bool tokenize(const std::string& line, std::vector<std::string>& words)
@@ -1455,7 +2114,7 @@ static bool configure_flag(const std::string& arg)
 	return arg == "--format" || arg == "--exposure" || arg == "--gain";
 }
 
-static bool read_line(std::string& line)
+static bool read_line_plain(std::string& line)
 {
 	line.clear();
 	char buf[4096];
@@ -1477,6 +2136,20 @@ static bool read_line(std::string& line)
 		}
 	}
 	return false;
+}
+
+static bool read_line_readline(std::string& line)
+{
+	line.clear();
+	errno = 0;
+	char* raw = readline("grabercam> ");
+	if (!raw)
+		return false;
+	line = raw;
+	if (!line.empty())
+		add_history(raw);
+	std::free(raw);
+	return true;
 }
 
 static int run_shell_command(Session& session, const Opt& base, const std::vector<std::string>& words)
@@ -1540,16 +2213,27 @@ static int cmd_shell(const Opt& opt)
 		? OpenMode::CameraConfigured : OpenMode::Camera;
 	if (!session.open(opt, mode))
 		return 2;
-	std::fprintf(stderr, "сессия открыта. help — список, quit — выход\n");
 	bool tty = ::isatty(fileno(stdin)) == 1;
+	std::string history = shell_history_path();
+	if (tty) {
+		using_history();
+		rl_outstream = stderr;
+		rl_attempted_completion_function = shell_completion;
+		if (!history.empty())
+			read_history(history.c_str());
+		std::fprintf(stderr, "сессия открыта. help — список, quit — выход; Tab и ↑/↓ доступны\n");
+	} else {
+		std::fprintf(stderr, "сессия открыта. help — список, quit — выход\n");
+	}
 	int rc = 0;
 	while (!g_stop.load()) {
-		if (tty) {
-			std::fputs("grabercam> ", stderr);
-			std::fflush(stderr);
-		}
 		std::string line;
-		if (!read_line(line))
+		bool ok = false;
+		if (tty)
+			ok = read_line_readline(line);
+		else
+			ok = read_line_plain(line);
+		if (!ok)
 			break;
 		std::vector<std::string> words;
 		if (!tokenize(line, words) || words.empty())
@@ -1557,7 +2241,12 @@ static int cmd_shell(const Opt& opt)
 		if (words[0] == "quit" || words[0] == "exit")
 			break;
 		if (words[0] == "help") {
-			shell_usage();
+			if (words.size() == 1) {
+				shell_usage();
+			} else if (!shell_help_topic(words[1])) {
+				std::fprintf(stderr, "нет справки для %s\n", words[1].c_str());
+				shell_usage();
+			}
 			continue;
 		}
 		run_shell_command(session, opt, words);
@@ -1565,6 +2254,10 @@ static int cmd_shell(const Opt& opt)
 			std::fprintf(stderr, "прервано\n");
 			g_stop.store(false);
 		}
+	}
+	if (tty && !history.empty()) {
+		write_history(history.c_str());
+		history_truncate_file(history.c_str(), 500);
 	}
 	if (g_stop.load())
 		rc = 130;

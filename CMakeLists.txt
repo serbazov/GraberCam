@@ -25,5 +25,6 @@ add_executable(grabercam
 	src/main.cpp
 	src/session.cpp
 )
-target_link_libraries(grabercam PRIVATE easycap)
+find_library(READLINE_LIB NAMES readline libreadline.so.8 REQUIRED)
+target_link_libraries(grabercam PRIVATE easycap ${READLINE_LIB})
 target_compile_options(grabercam PRIVATE -O2 -Wall -Wextra)
