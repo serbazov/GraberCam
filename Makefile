@@ -8,7 +8,7 @@ SDK_OBJ := $(addprefix build/,$(SDK_SRC:.cpp=.o))
 
 .PHONY: all clean
 
-all: grabercam
+all: grabercam graberview
 
 build/%.o: $(EASYCAP)/src/%.cpp
 	mkdir -p build
@@ -22,5 +22,8 @@ READLINE_LIB ?= -l:libreadline.so.8
 grabercam: src/main.cpp src/session.cpp src/session.hpp build/easycap.a
 	$(CXX) $(CXXFLAGS) -I$(EASYCAP)/include -o $@ src/main.cpp src/session.cpp build/easycap.a -ldl -lpthread -lrt $(READLINE_LIB)
 
+graberview: src/view.cpp src/session.cpp src/session.hpp build/easycap.a
+	$(CXX) $(CXXFLAGS) -I$(EASYCAP)/include -o $@ src/view.cpp src/session.cpp build/easycap.a -ldl -lpthread -lrt
+
 clean:
-	rm -rf build grabercam
+	rm -rf build grabercam graberview

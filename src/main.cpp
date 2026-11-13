@@ -132,6 +132,7 @@ static void usage()
 		"  record                   непрерывная запись в один raw\n"
 		"  bench                    замер пропускной способности\n"
 		"  shell                    одна сессия, команды со stdin до quit\n"
+		"  gui                      окно: живое изображение и настройки камеры\n"
 		"\n"
 		"Режимы bench (--mode):\n"
 		"  discard   захват, буфер сразу возвращается карте\n"
@@ -2206,6 +2207,34 @@ static int run_shell_command(Session& session, const Opt& base, const std::vecto
 	return 1;
 }
 
+static int cmd_gui(int argc, char** argv)
+{
+	char exe[4096];
+	ssize_t n = ::readlink("/proc/self/exe", exe, sizeof(exe) - 1);
+	if (n < 0) {
+		std::perror("readlink");
+		return 1;
+	}
+	exe[n] = 0;
+	std::string path(exe);
+	auto slash = path.find_last_of('/');
+	std::string dir = slash == std::string::npos ? "." : path.substr(0, slash);
+	std::string script = dir + "/gui/live.py";
+	std::vector<std::string> store;
+	store.push_back("python3");
+	store.push_back(script);
+	for (int i = 2; i < argc; ++i)
+		store.push_back(argv[i]);
+	std::vector<char*> args;
+	args.reserve(store.size() + 1);
+	for (std::string& s : store)
+		args.push_back(s.data());
+	args.push_back(nullptr);
+	::execvp(args[0], args.data());
+	std::perror("python3");
+	return 1;
+}
+
 static int cmd_shell(const Opt& opt)
 {
 	Session session;
@@ -2291,6 +2320,8 @@ int main(int argc, char** argv)
 		return cmd_bench(opt);
 	if (cmd == "shell")
 		return cmd_shell(opt);
+	if (cmd == "gui")
+		return cmd_gui(argc, argv);
 
 	std::fprintf(stderr, "неизвестная команда %s\n", cmd.c_str());
 	usage();
