@@ -1,0 +1,106 @@
+карт: 1
+ожидание линка 2.0 с
+камера Machine Vision MV-AX5F57MP050E sn=FG06273AAK00001 9296x796 Mono8
+ExposureTime = 2300 мкс
+GainRaw = 1, AnalogGain = 1
+TriggerMode = Off, AcquisitionMode = Continuous
+старт захвата, буферов 8
+[SCAP INFO] scap init
+[SCAP]load cti ok
+[PDL]device 0 created already!
+[PDL]device 0 created already!
+SAVED Width=9296
+SAVED Height=796
+SAVED OffsetX=0
+SAVED OffsetY=0
+SAVED PixelFormat=Mono8
+SAVED ExposureTime=2300
+SAVED TriggerMode=Off
+SAVED AcquisitionMode=Continuous
+SAVED AcquisitionFrameRateEnable=0
+FEATURE ChunkModeActive unavailable gc=-10011 feature can not find
+FEATURE ChunkSelector unavailable gc=-10011 feature can not find
+FEATURE ChunkEnable unavailable gc=-10011 feature can not find
+FEATURE SequencerMode available Off
+FEATURE SequencerFeatureSelector available ExposureTime
+FEATURE MultipleROIEnable available 0
+FEATURE SensorWidth available 9344
+FEATURE SensorHeight available 7000
+STOPPED_SET y=0 write_and_read_ms=5.323440
+STOPPED_SET y=1750 write_and_read_ms=7.109933
+STOPPED_SET y=3500 write_and_read_ms=6.862203
+STOPPED_SET y=5250 write_and_read_ms=6.927016
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+FRAME i=0 id=1 ts=8708748698 x=0 y=0 bytes=12264000 interval_ms=3.278881
+FRAME i=1 id=2 ts=8708752282 x=0 y=0 bytes=12264000 interval_ms=3.581856
+FRAME i=2 id=3 ts=8708755865 x=0 y=0 bytes=12264000 interval_ms=3.581716
+FRAME i=3 id=4 ts=8708759447 x=0 y=0 bytes=12264000 interval_ms=3.581157
+FRAME i=4 id=5 ts=8708763019 x=0 y=0 bytes=12264000 interval_ms=3.576059
+FRAME i=5 id=6 ts=8708766594 x=0 y=0 bytes=12264000 interval_ms=3.575849
+FRAME i=6 id=7 ts=8708770175 x=0 y=0 bytes=12264000 interval_ms=3.581646
+FRAME i=7 id=8 ts=8708773752 x=0 y=0 bytes=12264000 interval_ms=3.575221
+LIVE_SET y=1750 ok=0 write_ms=0.002864 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=8 id=9 ts=8708777330 x=0 y=0 bytes=12264000 interval_ms=3.576617
+FRAME i=9 id=10 ts=8708780921 x=0 y=0 bytes=12264000 interval_ms=3.593450
+FRAME i=10 id=11 ts=8708784481 x=0 y=0 bytes=12264000 interval_ms=3.560065
+FRAME i=11 id=12 ts=8708788062 x=0 y=0 bytes=12264000 interval_ms=3.578224
+FRAME i=12 id=13 ts=8708791638 x=0 y=0 bytes=12264000 interval_ms=3.575919
+FRAME i=13 id=14 ts=8708795220 x=0 y=0 bytes=12264000 interval_ms=3.585488
+FRAME i=14 id=15 ts=8708798799 x=0 y=0 bytes=12264000 interval_ms=3.578014
+FRAME i=15 id=16 ts=8708802372 x=0 y=0 bytes=12264000 interval_ms=3.570751
+LIVE_SET y=3500 ok=0 write_ms=0.002304 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=16 id=17 ts=8708805954 x=0 y=0 bytes=12264000 interval_ms=3.600992
+FRAME i=17 id=18 ts=8708809524 x=0 y=0 bytes=12264000 interval_ms=3.569634
+FRAME i=18 id=19 ts=8708813101 x=0 y=0 bytes=12264000 interval_ms=3.576059
+FRAME i=19 id=20 ts=8708816684 x=0 y=0 bytes=12264000 interval_ms=3.593728
+FRAME i=20 id=21 ts=8708820262 x=0 y=0 bytes=12264000 interval_ms=3.567469
+FRAME i=21 id=22 ts=8708823836 x=0 y=0 bytes=12264000 interval_ms=3.557760
+FRAME i=22 id=23 ts=8708827414 x=0 y=0 bytes=12264000 interval_ms=3.579132
+FRAME i=23 id=24 ts=8708830989 x=0 y=0 bytes=12264000 interval_ms=3.573893
+LIVE_SET y=5250 ok=0 write_ms=0.002864 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=24 id=25 ts=8708834568 x=0 y=0 bytes=12264000 interval_ms=3.576688
+FRAME i=25 id=26 ts=8708838153 x=0 y=0 bytes=12264000 interval_ms=3.587164
+FRAME i=26 id=27 ts=8708841730 x=0 y=0 bytes=12264000 interval_ms=3.576617
+FRAME i=27 id=28 ts=8708845302 x=0 y=0 bytes=12264000 interval_ms=3.568376
+FRAME i=28 id=29 ts=8708848881 x=0 y=0 bytes=12264000 interval_ms=3.578923
+FRAME i=29 id=30 ts=8708852456 x=0 y=0 bytes=12264000 interval_ms=3.574871
+FRAME i=30 id=31 ts=8708856036 x=0 y=0 bytes=12264000 interval_ms=3.588281
+FRAME i=31 id=32 ts=8708859611 x=0 y=0 bytes=12264000 interval_ms=3.572218
+LIVE_SET y=0 ok=0 write_ms=0.003282 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=32 id=33 ts=8708863193 x=0 y=0 bytes=12264000 interval_ms=3.594148
+FRAME i=33 id=34 ts=8708866785 x=0 y=0 bytes=12264000 interval_ms=3.607977
+FRAME i=34 id=35 ts=8708870345 x=0 y=0 bytes=12264000 interval_ms=3.531988
+FRAME i=35 id=36 ts=8708873922 x=0 y=0 bytes=12264000 interval_ms=3.575849
+FRAME i=36 id=37 ts=8708877504 x=0 y=0 bytes=12264000 interval_ms=3.581297
+FRAME i=37 id=38 ts=8708881093 x=0 y=0 bytes=12264000 interval_ms=3.590796
+FRAME i=38 id=39 ts=8708884660 x=0 y=0 bytes=12264000 interval_ms=3.562090
+FRAME i=39 id=40 ts=8708888231 x=0 y=0 bytes=12264000 interval_ms=3.568796
+LIVE_SET y=1750 ok=0 write_ms=0.002374 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=40 id=41 ts=8708891811 x=0 y=0 bytes=12264000 interval_ms=3.581995
+FRAME i=41 id=42 ts=8708895388 x=0 y=0 bytes=12264000 interval_ms=3.580179
+FRAME i=42 id=43 ts=8708898963 x=0 y=0 bytes=12264000 interval_ms=3.576199
+FRAME i=43 id=44 ts=8708902543 x=0 y=0 bytes=12264000 interval_ms=3.580668
+FRAME i=44 id=45 ts=8708906122 x=0 y=0 bytes=12264000 interval_ms=3.578294
+FRAME i=45 id=46 ts=8708909700 x=0 y=0 bytes=12264000 interval_ms=3.577037
+FRAME i=46 id=47 ts=8708913275 x=0 y=0 bytes=12264000 interval_ms=3.575220
+FRAME i=47 id=48 ts=8708916853 x=0 y=0 bytes=12264000 interval_ms=3.577596
+LIVE_SET y=3500 ok=0 write_ms=0.001397 read_ok=1 read=0 error=gc=-10008 feature can not write
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+RESTORED Width=9296
+RESTORED Height=796
+RESTORED PixelFormat=Mono8
+RESTORED ExposureTime=2300
+RESTORED AcquisitionMode=Continuous
+RESTORED TriggerMode=Off
+RESTORED AcquisitionFrameRateEnable=0
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+close ds
+close dev
+close ds
+close dev
+[SCAP INFO] scap done begin
+_TLCloseclose_interface_info:0x556178d5c3f0
+[SCAP INFO] scap done end

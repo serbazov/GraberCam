@@ -1,0 +1,22 @@
+Reports: /home/user/work/GraberCam/experiments/roi-exposure-20261113-height1
+Traceback (most recent call last):
+  File "/home/user/work/GraberCam/scripts/sweep_fps.py", line 44, in command
+    line = self.lines.get(timeout=max(.01, deadline-time.monotonic()))
+  File "/usr/lib/python3.14/queue.py", line 209, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/work/GraberCam/scripts/sweep_fps.py", line 177, in <module>
+    main()
+    ~~~~^^
+  File "/home/user/work/GraberCam/scripts/sweep_fps.py", line 127, in main
+    camera.set('Height', height)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/GraberCam/scripts/sweep_fps.py", line 67, in set
+    lines = self.command(f'set {name} {value}')
+  File "/home/user/work/GraberCam/scripts/sweep_fps.py", line 50, in command
+    raise TimeoutError(command)
+TimeoutError: set Height 1

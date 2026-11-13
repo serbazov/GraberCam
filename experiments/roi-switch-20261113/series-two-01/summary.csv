@@ -1,0 +1,5 @@
+test,mode,group,actual_switches_s,capture_fps,confirmed_switches,dropped,first_target_ms_max,first_target_ms_p50,first_target_ms_p95,frame_gap_ms_max,frame_gap_ms_p50,frame_gap_ms_p95,frames,noncyclic_transitions,restart_ms_max,restart_ms_p50,restart_ms_p95,stale_frames_p50,stop_ms_max,stop_ms_p50,stop_ms_p95,switches,unknown,window_switches_s,write_ms_max,write_ms_p50,write_ms_p95,wrong_zone,zone_run_max,zone_run_p50,zone_run_p95
+baseline,copy,0,,279.52769681110846,0,0,,,,,,,384,,,,,,,,,0,0,,,,,0,,,
+baseline,discard,0,,279.5118732272524,0,0,,,,,,,384,,,,,,,,,0,0,,,,,0,,,
+live_pipeline,copy,2,138.35746876689845,276.71699483465585,2047,25.0,208.7952650000006,10.599247999999672,25.959929599999263,,,,4096,0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,2047,0,138.32471023847143,203.8898999999985,5.008032999999821,5.593415299999714,,50,2.0,2.0
+live_pipeline,discard,2,139.7602388661287,279.52084990787165,2047,0,7.472832999998704,6.972414000000804,7.235914000000618,,,,4096,0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,2047,0,139.72629542403254,4.537576000001281,3.7796490000002088,4.154449999999068,,2,2.0,2.0

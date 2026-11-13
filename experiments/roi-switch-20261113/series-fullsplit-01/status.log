@@ -1,0 +1,22 @@
+write_node=OffsetY
+controller_policy=skip_missed_frame_thresholds
+SequencerMode=Off
+MultipleROIEnable=0
+reference_norm_0=18.849
+reference_norm_1=18.1973
+reference_norm_2=18.9283
+reference_norm_3=20.2748
+COMPLETE
+RESTORED TLParamsLocked=0
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+RESTORED Width=9296
+RESTORED Height=796
+RESTORED PixelFormat=Mono8
+RESTORED ExposureTime=2300
+RESTORED AcquisitionMode=Continuous
+RESTORED TriggerMode=Off
+RESTORED AcquisitionFrameRateEnable=0
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+RESTORED TLParamsLocked=0

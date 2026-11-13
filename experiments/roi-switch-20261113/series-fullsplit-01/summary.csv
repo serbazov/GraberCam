@@ -1,0 +1,3 @@
+test,mode,group,capture_fps,confirmed_switches,dropped,first_target_ms_max,first_target_ms_p50,first_target_ms_p95,frame_gap_ms_max,frame_gap_ms_p50,frame_gap_ms_p95,frames,restart_ms_max,restart_ms_p50,restart_ms_p95,roi_images_s,split_copy_ms_p50,split_copy_ms_p95,stale_frames_p50,stop_ms_max,stop_ms_p50,stop_ms_p95,switches,unknown,write_ms_max,write_ms_p50,write_ms_p95
+full_frame,discard,0,71.03412061498736,0,0,,,,,,,512,,,,284.13648245994943,,,,,,,0,512,,,
+full_frame,split_copy,0,71.03380820836726,0,0,,,,,,,512,,,,284.13523283346905,6.294700499999999,7.106647,,,,,0,512,,,

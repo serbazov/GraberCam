@@ -1,0 +1,130 @@
+[SCAP INFO] scap init
+[SCAP]load cti ok
+карт: 1
+ожидание линка 2.0 с
+[PDL]device 0 created already!
+[PDL]device 0 created already!
+камера Machine Vision MV-AX5F57MP050E sn=FG06273AAK00001 9296x796 Mono8
+ExposureTime = 2300 мкс
+GainRaw = 1, AnalogGain = 1
+TriggerMode = Off, AcquisitionMode = Continuous
+сессия открыта. help — список, quit — выход
+картa: 0 Flex I/O Quad CXP-12 Enhanced(A183260518289)[4d4s]
+камера: Machine Vision
+модель: MV-AX5F57MP050E
+серийный: FG06273AAK00001
+кадр: 9296 x 796 Mono8
+такт времени: 1000000 Гц
+interface FirmwareMode = AAAA
+interface CxpLinkConfiguration = CXP12_X4
+camera PixelFormat = Mono8
+camera ExposureTime = 2300
+camera GainRaw = 1
+camera AnalogGain = 1
+camera AcquisitionFrameRate = 70.6
+camera Width = 9296
+camera Height = 796
+camera TriggerMode = Off
+camera AcquisitionMode = Continuous
+payload: 7399616 байт, буферов минимум 2
+DeviceSerialNumber = FG06273AAK00001
+Width = 9296
+DeviceSerialNumber = FG06273AAK00001
+Height = 796
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono8
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 2300
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode = Off
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode = Continuous
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable = 0
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable = 0
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode: ok
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode = Off
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode = Continuous
+DeviceSerialNumber = FG06273AAK00001
+OffsetX: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat: ok
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono8
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 9344
+DeviceSerialNumber = FG06273AAK00001
+Height: gc=-10013 feature has exception
+Value = 1 must be equal or greater than Min = 2. : OutOfRangeException thrown in node 'Height' while calling 'Height.SetValue()' (file 'IntegerT.h', line 79)DeviceSerialNumber = FG06273AAK00001
+OffsetX: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 9296
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 796
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat: ok
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono8
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 2300
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode = Continuous
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode: ok
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode = Off
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetX: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+сессия закрыта
+close ds
+close dev
+close ds
+close dev
+[SCAP INFO] scap done begin
+_TLCloseclose_interface_info:0x5a7c2288c3f0
+[SCAP INFO] scap done end

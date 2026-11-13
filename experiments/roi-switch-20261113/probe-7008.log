@@ -1,0 +1,210 @@
+карт: 1
+ожидание линка 2.0 с
+камера Machine Vision MV-AX5F57MP050E sn=FG06273AAK00001 9296x796 Mono8
+ExposureTime = 2300 мкс
+GainRaw = 1, AnalogGain = 1
+TriggerMode = Off, AcquisitionMode = Continuous
+старт захвата, буферов 8
+старт захвата, буферов 8
+[SCAP INFO] scap init
+[SCAP]load cti ok
+[PDL]device 0 created already!
+[PDL]device 0 created already!
+SAVED Width=9296
+SAVED Height=796
+SAVED OffsetX=0
+SAVED OffsetY=0
+SAVED PixelFormat=Mono8
+SAVED ExposureTime=2300
+SAVED TriggerMode=Off
+SAVED AcquisitionMode=Continuous
+SAVED AcquisitionFrameRateEnable=0
+XML_SIZE 28465
+NODE Width ok=1 type=2 access=4 min=128 max=9344 inc=16
+NODE Height ok=1 type=2 access=4 min=2 max=7000 inc=1
+NODE OffsetY ok=1 type=2 access=4 min=0 max=6204 inc=1
+NODE SequencerFeatureSelector ok=1 type=9 access=4 min=12884901901 max=0 inc=0
+FEATURE ChunkModeActive unavailable gc=-10011 feature can not find
+FEATURE ChunkSelector unavailable gc=-10011 feature can not find
+FEATURE ChunkEnable unavailable gc=-10011 feature can not find
+FEATURE SequencerMode available Off
+FEATURE SequencerFeatureSelector available ExposureTime
+FEATURE MultipleROIEnable available 0
+FEATURE SensorWidth available 9344
+FEATURE SensorHeight available 7000
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+STOPPED_SET y=0 write_and_read_ms=7.007754
+STOPPED_SET y=1750 write_and_read_ms=7.049869
+STOPPED_SET y=3500 write_and_read_ms=6.651070
+STOPPED_SET y=5250 write_and_read_ms=6.841390
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+FRAME i=0 id=1 ts=8940871567 x=0 y=0 bytes=12264000 interval_ms=3.295712
+FRAME i=1 id=2 ts=8940875144 x=0 y=0 bytes=12264000 interval_ms=3.578155
+FRAME i=2 id=3 ts=8940878720 x=0 y=0 bytes=12264000 interval_ms=3.574662
+FRAME i=3 id=4 ts=8940882299 x=0 y=0 bytes=12264000 interval_ms=3.584020
+FRAME i=4 id=5 ts=8940885879 x=0 y=0 bytes=12264000 interval_ms=3.580739
+FRAME i=5 id=6 ts=8940889457 x=0 y=0 bytes=12264000 interval_ms=3.571379
+FRAME i=6 id=7 ts=8940893034 x=0 y=0 bytes=12264000 interval_ms=3.608535
+FRAME i=7 id=8 ts=8940896613 x=0 y=0 bytes=12264000 interval_ms=3.578923
+LIVE_SET y=1750 ok=0 write_ms=0.003282 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=8 id=9 ts=8940900454 x=0 y=0 bytes=12264000 interval_ms=3.830214
+FRAME i=9 id=10 ts=8940903768 x=0 y=0 bytes=12264000 interval_ms=3.323161
+FRAME i=10 id=11 ts=8940907345 x=0 y=0 bytes=12264000 interval_ms=3.578084
+FRAME i=11 id=12 ts=8940910923 x=0 y=0 bytes=12264000 interval_ms=3.551195
+FRAME i=12 id=13 ts=8940914503 x=0 y=0 bytes=12264000 interval_ms=3.581646
+FRAME i=13 id=14 ts=8940918079 x=0 y=0 bytes=12264000 interval_ms=3.573684
+FRAME i=14 id=15 ts=8940921655 x=0 y=0 bytes=12264000 interval_ms=3.575361
+FRAME i=15 id=16 ts=8940925233 x=0 y=0 bytes=12264000 interval_ms=3.606370
+LIVE_SET y=3500 ok=0 write_ms=0.002794 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=16 id=17 ts=8940928810 x=0 y=0 bytes=12264000 interval_ms=3.575780
+FRAME i=17 id=18 ts=8940932388 x=0 y=0 bytes=12264000 interval_ms=3.579900
+FRAME i=18 id=19 ts=8940936296 x=0 y=0 bytes=12264000 interval_ms=3.907320
+FRAME i=19 id=20 ts=8940939543 x=0 y=0 bytes=12264000 interval_ms=3.245705
+FRAME i=20 id=21 ts=8940943372 x=0 y=0 bytes=12264000 interval_ms=3.829656
+FRAME i=21 id=22 ts=8940946691 x=0 y=0 bytes=12264000 interval_ms=3.297808
+FRAME i=22 id=23 ts=8940950275 x=0 y=0 bytes=12264000 interval_ms=3.577805
+FRAME i=23 id=24 ts=8940953848 x=0 y=0 bytes=12264000 interval_ms=3.573265
+LIVE_SET y=5250 ok=0 write_ms=0.002863 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=24 id=25 ts=8940957425 x=0 y=0 bytes=12264000 interval_ms=3.578922
+FRAME i=25 id=26 ts=8940960996 x=0 y=0 bytes=12264000 interval_ms=3.583881
+FRAME i=26 id=27 ts=8940964580 x=0 y=0 bytes=12264000 interval_ms=3.567678
+FRAME i=27 id=28 ts=8940968149 x=0 y=0 bytes=12264000 interval_ms=3.568167
+FRAME i=28 id=29 ts=8940971733 x=0 y=0 bytes=12264000 interval_ms=3.584509
+FRAME i=29 id=30 ts=8940975303 x=0 y=0 bytes=12264000 interval_ms=3.569494
+FRAME i=30 id=31 ts=8940978879 x=0 y=0 bytes=12264000 interval_ms=3.575151
+FRAME i=31 id=32 ts=8940982456 x=0 y=0 bytes=12264000 interval_ms=3.577665
+LIVE_SET y=0 ok=0 write_ms=0.002794 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=32старт захвата, буферов 8
+ id=33 ts=8940986034 x=0 y=0 bytes=12264000 interval_ms=3.578294
+FRAME i=33 id=34 ts=8940989611 x=0 y=0 bytes=12264000 interval_ms=3.578643
+FRAME i=34 id=35 ts=8940993189 x=0 y=0 bytes=12264000 interval_ms=3.575849
+FRAME i=35 id=36 ts=8940996767 x=0 y=0 bytes=12264000 interval_ms=3.577805
+FRAME i=36 id=37 ts=8941000343 x=0 y=0 bytes=12264000 interval_ms=3.576618
+FRAME i=37 id=38 ts=8941003922 x=0 y=0 bytes=12264000 interval_ms=3.578433
+FRAME i=38 id=39 ts=8941007520 x=0 y=0 bytes=12264000 interval_ms=3.598129
+FRAME i=39 id=40 ts=8941011079 x=0 y=0 bytes=12264000 interval_ms=3.558319
+LIVE_SET y=1750 ok=0 write_ms=0.002375 read_ok=1 read=0 error=gc=-10008 feature can not write
+FRAME i=40 id=41 ts=8941014655 x=0 y=0 bytes=12264000 interval_ms=3.577805
+FRAME i=41 id=42 ts=8941018247 x=0 y=0 bytes=12264000 interval_ms=3.588560
+FRAME i=42 id=43 ts=8941021811 x=0 y=0 bytes=12264000 interval_ms=3.562719
+FRAME i=43 id=44 ts=8941025402 x=0 y=0 bytes=12264000 interval_ms=3.598688
+FRAME i=44 id=45 ts=8941028980 x=0 y=0 bytes=12264000 interval_ms=3.583392
+FRAME i=45 id=46 ts=8941032557 x=0 y=0 bytes=12264000 interval_ms=3.572148
+FRAME i=46 id=47 ts=8941036135 x=0 y=0 bytes=12264000 interval_ms=3.574313
+FRAME i=47 id=48 ts=8941039712 x=0 y=0 bytes=12264000 interval_ms=3.582344
+LIVE_SET y=3500 ok=0 write_ms=0.002375 read_ok=1 read=0 error=gc=-10008 feature can not write
+STRATEGY 0 paused=1 written=0 started=1 stop_ms=0.719095 write_ms=0.002375 start_ms=0.869744 error=gc=-10008 feature can not write
+STRATEGY_FRAME method=0 j=0 y=0 id=49 from_stop_ms=3.039252
+STRATEGY_FRAME method=0 j=1 y=0 id=50 from_stop_ms=6.623273
+STRATEGY_FRAME method=0 j=2 y=0 id=51 from_stop_ms=10.211345
+STRATEGY_FRAME method=0 j=3 y=0 id=52 from_stop_ms=13.783632
+STRATEGY_FRAME method=0 j=4 y=0 id=53 from_stop_ms=17.350541
+STRATEGY_FRAME method=0 j=5 y=0 id=54 from_stop_ms=20.924645
+scap_pause
+scap_restart
+[SCAP]  scap_restart: m_DSStartAcquisition=0
+STRATEGY 1 paused=1 written=1 started=1 stop_ms=2.811916 write_ms=3.927225 start_ms=6.823720 error=
+STRATEGY_FRAME method=1 j=0 y=3500 id=1 from_stop_ms=16.780141
+STRATEGY_FRAME method=1 j=1 y=3500 id=2 from_stop_ms=20.357317
+STRATEGY_FRAME method=1 j=2 y=3500 id=3 from_stop_ms=23.926042
+STRATEGY_FRAME method=1 j=3 y=3500 id=4 from_stop_ms=27.516419
+STRATEGY_FRAME method=1 j=4 y=3500 id=5 from_stop_ms=31.081513
+STRATEGY_FRAME method=1 j=5 y=3500 id=6 from_stop_ms=34.667489
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+STRATEGY 2 paused=1 written=1 started=1 stop_ms=11.441754 write_ms=4.197375 start_ms=46.325963 error=
+STRATEGY_FRAME method=2 j=0 y=5250 id=1 from_stop_ms=65.236918
+STRATEGY_FRAME method=2 j=1 y=5250 id=2 from_stop_ms=68.814304
+STRATEGY_FRAME method=2 j=2 y=5250 id=3 from_stop_ms=72.374020
+STRATEGY_FRAME method=2 j=3 y=5250 id=4 from_stop_ms=75.957342
+STRATEGY_FRAME method=2 j=4 y=5250 id=5 from_stop_ms=79.530957
+STRATEGY_FRAME method=2 j=5 y=5250 id=6 from_stop_ms=83.109669
+UNLOCK ok=1
+UNLOCKED_SET y=0 ok=1 ms=3.781116 error=
+UNLOCKED_FRAME target=0 j=0 y=0 id=7 since_set_ms=4.282163
+CLASSIFY best=3 scores=0.9569,0.9559,0.9632,0.9889
+UNLOCKED_FRAME target=0 j=1 y=0 id=8 since_set_ms=7.215604
+CLASSIFY best=0 scores=0.9905,0.9773,0.9661,0.9562
+UNLOCKED_FRAME target=0 j=2 y=0 id=9 since_set_ms=10.730901
+CLASSIFY best=0 scores=0.9908,0.9771,0.9651,0.9554
+UNLOCKED_FRAME target=0 j=3 y=0 id=10 since_set_ms=14.329169
+CLASSIFY best=0 scores=0.9900,0.9769,0.9646,0.9557
+UNLOCKED_FRAME target=0 j=4 y=0 id=11 since_set_ms=17.870516
+CLASSIFY best=0 scores=0.9902,0.9779,0.9629,0.9559
+UNLOCKED_FRAME target=0 j=5 y=0 id=12 since_set_ms=21.448950
+CLASSIFY best=0 scores=0.9888,0.9789,0.9650,0.9562
+UNLOCKED_FRAME target=0 j=6 y=0 id=13 since_set_ms=25.065797
+CLASSIFY best=0 scores=0.9877,0.9798,0.9653,0.9563
+UNLOCKED_FRAME target=0 j=7 y=0 id=14 since_set_ms=28.709393
+CLASSIFY best=0 scores=0.9876,0.9798,0.9621,0.9555
+UNLOCKED_SET y=1750 ok=1 ms=3.597082 error=
+UNLOCKED_FRAME target=1750 j=0 y=1750 id=15 since_set_ms=4.131933
+CLASSIFY best=0 scores=0.9875,0.9811,0.9609,0.9570
+UNLOCKED_FRAME target=1750 j=1 y=1750 id=16 since_set_ms=7.471087
+CLASSIFY best=1 scores=0.9788,0.9899,0.9685,0.9625
+UNLOCKED_FRAME target=1750 j=2 y=1750 id=17 since_set_ms=10.830496
+CLASSIFY best=1 scores=0.9803,0.9881,0.9714,0.9628
+UNLOCKED_FRAME target=1750 j=3 y=1750 id=18 since_set_ms=14.069147
+CLASSIFY best=1 scores=0.9818,0.9864,0.9708,0.9611
+UNLOCKED_FRAME target=1750 j=4 y=1750 id=19 since_set_ms=17.636825
+CLASSIFY best=1 scores=0.9806,0.9872,0.9720,0.9616
+UNLOCKED_FRAME target=1750 j=5 y=1750 id=20 since_set_ms=21.212814
+CLASSIFY best=1 scores=0.9805,0.9851,0.9676,0.9597
+UNLOCKED_FRAME target=1750 j=6 y=1750 id=21 since_set_ms=24.878061
+CLASSIFY best=1 scores=0.9792,0.9834,0.9670,0.9581
+UNLOCKED_FRAME target=1750 j=7 y=1750 id=22 since_set_ms=28.388887
+CLASSIFY best=1 scores=0.9799,0.9864,0.9719,0.9593
+UNLOCKED_SET y=3500 ok=1 ms=3.507544 error=
+UNLOCKED_FRAME target=3500 j=0 y=3500 id=23 since_set_ms=3.981982
+CLASSIFY best=1 scores=0.9789,0.9859,0.9677,0.9586
+UNLOCKED_FRAME target=3500 j=1 y=3500 id=24 since_set_ms=7.055177
+CLASSIFY best=2 scores=0.9678,0.9736,0.9850,0.9692
+UNLOCKED_FRAME target=3500 j=2 y=3500 id=25 since_set_ms=10.573895
+CLASSIFY best=2 scores=0.9688,0.9767,0.9845,0.9717
+UNLOCKED_FRAME target=3500 j=3 y=3500 id=26 since_set_ms=14.423875
+CLASSIFY best=2 scores=0.9684,0.9749,0.9861,0.9726
+UNLOCKED_FRAME target=3500 j=4 y=3500 id=27 since_set_ms=17.717841
+CLASSIFY best=2 scores=0.9695,0.9734,0.9859,0.9722
+UNLOCKED_FRAME target=3500 j=5 y=3500 id=28 since_set_ms=21.331475
+CLASSIFY best=2 scores=0.9697,0.9718,0.9865,0.9711
+UNLOCKED_FRAME target=3500 j=6 y=3500 id=29 since_set_ms=24.879458
+CLASSIFY best=2 scores=0.9698,0.9715,0.9878,0.9701
+UNLOCKED_FRAME target=3500 j=7 y=3500 id=30 since_set_ms=28.464526
+CLASSIFY best=2 scores=0.9693,0.9697,0.9879,0.9686
+UNLOCKED_SET y=5250 ok=1 ms=3.493086 error=
+UNLOCKED_FRAME target=5250 j=0 y=5250 id=31 since_set_ms=3.974997
+CLASSIFY best=2 scores=0.9669,0.9688,0.9869,0.9676
+UNLOCKED_FRAME target=5250 j=1 y=5250 id=32 since_set_ms=7.081437
+CLASSIFY best=3 scores=0.9540,0.9583,0.9662,0.9882
+UNLOCKED_FRAME target=5250 j=2 y=5250 id=33 since_set_ms=10.672303
+CLASSIFY best=3 scores=0.9537,0.9584,0.9619,0.9890
+UNLOCKED_FRAME target=5250 j=3 y=5250 id=34 since_set_ms=14.239212
+CLASSIFY best=3 scores=0.9540,0.9591,0.9611,0.9895
+UNLOCKED_FRAME target=5250 j=4 y=5250 id=35 since_set_ms=17.846770
+CLASSIFY best=3 scores=0.9549,0.9604,0.9669,0.9912
+UNLOCKED_FRAME target=5250 j=5 y=5250 id=36 since_set_ms=21.382460
+CLASSIFY best=3 scores=0.9548,0.9585,0.9617,0.9912
+UNLOCKED_FRAME target=5250 j=6 y=5250 id=37 since_set_ms=24.893077
+CLASSIFY best=3 scores=0.9572,0.9591,0.9641,0.9907
+UNLOCKED_FRAME target=5250 j=7 y=5250 id=38 since_set_ms=28.495955
+CLASSIFY best=3 scores=0.9568,0.9585,0.9647,0.9902
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+RESTORED Width=9296
+RESTORED Height=796
+RESTORED PixelFormat=Mono8
+RESTORED ExposureTime=2300
+RESTORED AcquisitionMode=Continuous
+RESTORED TriggerMode=Off
+RESTORED AcquisitionFrameRateEnable=0
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+close ds
+close dev
+close ds
+close dev
+[SCAP INFO] scap done begin
+_TLCloseclose_interface_info:0x57dba8c2e3f0
+[SCAP INFO] scap done end

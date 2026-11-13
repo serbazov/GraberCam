@@ -1,0 +1,11 @@
+feature,value
+AcquisitionFrameRateEnable,0
+AcquisitionMode,Continuous
+ExposureTime,2300
+Height,796
+OffsetX,0
+OffsetY,0
+PixelFormat,Mono8
+TLParamsLocked,0
+TriggerMode,Off
+Width,9296

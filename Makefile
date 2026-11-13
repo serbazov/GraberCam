@@ -27,3 +27,8 @@ graberview: src/view.cpp src/session.cpp src/session.hpp build/easycap.a
 
 clean:
 	rm -rf build grabercam graberview
+
+# Standalone hardware experiment; not part of the normal application build.
+build/roi_switch_bench: scripts/roi_switch_bench.cpp src/session.cpp src/session.hpp build/easycap.a
+	mkdir -p build
+	$(CXX) $(CXXFLAGS) -Isrc -I$(EASYCAP)/include -o $@ scripts/roi_switch_bench.cpp src/session.cpp build/easycap.a -ldl -lpthread -lrt

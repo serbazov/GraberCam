@@ -1,0 +1,46 @@
+карт: 1
+ожидание линка 2.0 с
+камера Machine Vision MV-AX5F57MP050E sn=FG06273AAK00001 9296x796 Mono8
+ExposureTime = 2300 мкс
+GainRaw = 1, AnalogGain = 1
+TriggerMode = Off, AcquisitionMode = Continuous
+ERROR Width readback=7008, requested=7000
+[SCAP INFO] scap init
+[SCAP]load cti ok
+[PDL]device 0 created already!
+[PDL]device 0 created already!
+SAVED Width=9296
+SAVED Height=796
+SAVED OffsetX=0
+SAVED OffsetY=0
+SAVED PixelFormat=Mono8
+SAVED ExposureTime=2300
+SAVED TriggerMode=Off
+SAVED AcquisitionMode=Continuous
+SAVED AcquisitionFrameRateEnable=0
+FEATURE ChunkModeActive unavailable gc=-10011 feature can not find
+FEATURE ChunkSelector unavailable gc=-10011 feature can not find
+FEATURE ChunkEnable unavailable gc=-10011 feature can not find
+FEATURE SequencerMode available Off
+FEATURE SequencerFeatureSelector available ExposureTime
+FEATURE MultipleROIEnable available 0
+FEATURE SensorWidth available 9344
+FEATURE SensorHeight available 7000
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+RESTORED Width=9296
+RESTORED Height=796
+RESTORED PixelFormat=Mono8
+RESTORED ExposureTime=2300
+RESTORED AcquisitionMode=Continuous
+RESTORED TriggerMode=Off
+RESTORED AcquisitionFrameRateEnable=0
+RESTORED OffsetX=0
+RESTORED OffsetY=0
+close ds
+close dev
+close ds
+close dev
+[SCAP INFO] scap done begin
+_TLCloseclose_interface_info:0x654bc888e3f0
+[SCAP INFO] scap done end

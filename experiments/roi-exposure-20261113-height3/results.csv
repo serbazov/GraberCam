@@ -1,0 +1,3 @@
+width,height,exposure,mode,repeat,delivered_fps,source_fps,frames,dropped,disorder,timeouts,payload_bytes,grab_MBps,copy_MBps,queued_min,report
+9344,3,27,discard,1,11975.9701,11975.9701,35908,0,0,0,28032,335.71,0.0,,w9344_h3_e27_discard_r1.json
+9344,3,27,copy,1,11975.9308,11975.9308,35907,0,0,0,28032,335.709,9579.123,,w9344_h3_e27_copy_r1.json

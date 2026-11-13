@@ -1,0 +1,28 @@
+карт: 1
+ожидание линка 2.0 с
+камера Machine Vision MV-AX5F57MP050E sn=FG06273AAK00001 9296x796 Mono8
+ExposureTime = 2300 мкс
+GainRaw = 1, AnalogGain = 1
+TriggerMode = Off, AcquisitionMode = Continuous
+старт захвата, буферов 8
+старт захвата, буферов 8
+[SCAP INFO] scap init
+[SCAP]load cti ok
+[PDL]device 0 created already!
+[PDL]device 0 created already!
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+DONE full_frame discard
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+DONE full_frame split_copy
+close ds
+close dev
+close ds
+close dev
+[SCAP INFO] scap done begin
+_TLCloseclose_interface_info:0x55dd8166ee90
+[SCAP INFO] scap done end
