@@ -1,0 +1,10 @@
+format,width,height,exposure,mode,repeat,delivered_fps,source_fps,span_s,frames,dropped,disorder,timeouts,payload_bytes,grab_MBps,copy_MBps,queued_min,error,report
+Mono8,128,3333,27,discard,1,148.2858,148.2858,2.886319,429,0,0,0,426624,63.262,0.0,,,Mono8_w128_h3333_e27_discard_r1.json
+Mono8,128,3333,300,discard,1,148.2869,148.2869,2.886297,429,0,0,0,426624,63.263,0.0,,,Mono8_w128_h3333_e300_discard_r1.json
+Mono8,128,3333,2300,discard,1,148.2847,148.2847,2.879596,428,0,0,0,426624,63.262,0.0,,,Mono8_w128_h3333_e2300_discard_r1.json
+Mono8,128,777,27,discard,1,612.9134,612.9134,2.972688,1823,0,0,0,99456,60.958,0.0,,,Mono8_w128_h777_e27_discard_r1.json
+Mono8,128,777,300,discard,1,612.9123,612.9123,2.972693,1823,0,0,0,99456,60.958,0.0,,,Mono8_w128_h777_e300_discard_r1.json
+Mono8,128,777,2300,discard,1,430.1561,430.1561,2.959391,1274,0,0,0,99456,42.782,0.0,,,Mono8_w128_h777_e2300_discard_r1.json
+Mono8,128,31,27,discard,1,7168.2169,7168.2169,2.997259,21486,0,0,0,3968,28.443,0.0,,,Mono8_w128_h31_e27_discard_r1.json
+Mono8,128,31,300,discard,1,3080.1323,3080.1323,2.994027,9223,0,0,0,3968,12.222,0.0,,,Mono8_w128_h31_e300_discard_r1.json
+Mono8,128,31,2300,discard,1,430.1559,430.1559,2.959392,1274,0,0,0,3968,1.707,0.0,,,Mono8_w128_h31_e2300_discard_r1.json

@@ -1,0 +1,2838 @@
+[SCAP INFO] scap init
+[SCAP]load cti ok
+карт: 1
+ожидание линка 2.0 с
+[PDL]device 0 created already!
+[PDL]device 0 created already!
+камера Machine Vision MV-AX5F57MP050E sn=FG06273AAK00001 9344x7000 Mono8
+ExposureTime = 5000 мкс
+GainRaw = 1, AnalogGain = 1
+TriggerMode = Off, AcquisitionMode = Continuous
+сессия открыта. help — список, quit — выход
+картa: 0 Flex I/O Quad CXP-12 Enhanced(A183260518289)[4d4s]
+камера: Machine Vision
+модель: MV-AX5F57MP050E
+серийный: FG06273AAK00001
+кадр: 9344 x 7000 Mono8
+такт времени: 1000000 Гц
+interface FirmwareMode = AAAA
+interface CxpLinkConfiguration = CXP12_X4
+camera PixelFormat = Mono8
+camera ExposureTime = 5000
+camera GainRaw = 1
+camera AnalogGain = 1
+camera AcquisitionFrameRate = 71
+camera Width = 9344
+camera Height = 7000
+camera TriggerMode = Off
+camera AcquisitionMode = Continuous
+payload: 65408000 байт, буферов минимум 2
+DeviceSerialNumber = FG06273AAK00001
+Width = 9344
+DeviceSerialNumber = FG06273AAK00001
+Height = 7000
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono8
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode = Off
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode = Continuous
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable = 0
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable = 0
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode: ok
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode = Off
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode = Continuous
+DeviceSerialNumber = FG06273AAK00001
+OffsetX: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat: ok
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono8
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 9344
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 1000
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 241  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 241
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.5 мс
+окно: 0.499 с
+по frame_id: 481.31 к/с, 4497.4 МБ/с
+принято: 481.31 к/с, 4497.4 МБ/с
+интервал хоста, мкс: min 1472  среднее 2078  p50 2077  p99 2545  max 2674
+интервал камеры, мкс: min 1471  среднее 2078  p50 2077  p99 2545  max 2684  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 225  пропуски 0   
+discard  кадры 466  пропуски 0   
+discard  кадры 707  пропуски 0   
+discard  кадры 948  пропуски 0   
+discard  кадры 1189  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.5 мс
+окно: 2.965 с
+по frame_id: 481.34 к/с, 4497.6 МБ/с
+принято: 481.34 к/с, 4497.6 МБ/с
+интервал хоста, мкс: min 1510  среднее 2078  p50 2077  p99 2442  max 2702
+интервал камеры, мкс: min 1478  среднее 2078  p50 2078  p99 2442  max 2702  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 225  пропуски 0   
+copy     кадры 466  пропуски 0   
+copy     кадры 707  пропуски 0   
+copy     кадры 948  пропуски 0   
+copy     кадры 1189  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.5 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 4497.6 МБ/с
+принято: 481.33 к/с, 4497.6 МБ/с
+memcpy: 12770.9 МБ/с
+интервал хоста, мкс: min 974  среднее 2078  p50 2078  p99 2344  max 6229
+интервал камеры, мкс: min 1498  среднее 2078  p50 2077  p99 2341  max 2656  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 241  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 241
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 0.499 с
+по frame_id: 481.35 к/с, 4497.7 МБ/с
+принято: 481.35 к/с, 4497.7 МБ/с
+интервал хоста, мкс: min 1656  среднее 2077  p50 2078  p99 2414  max 2516
+интервал камеры, мкс: min 1731  среднее 2078  p50 2078  p99 2381  max 2511  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 225  пропуски 0   
+discard  кадры 466  пропуски 0   
+discard  кадры 707  пропуски 0   
+discard  кадры 948  пропуски 0   
+discard  кадры 1189  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 4497.6 МБ/с
+принято: 481.33 к/с, 4497.6 МБ/с
+интервал хоста, мкс: min 1459  среднее 2078  p50 2077  p99 2506  max 2771
+интервал камеры, мкс: min 1464  среднее 2078  p50 2077  p99 2505  max 2761  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 225  пропуски 0   
+copy     кадры 466  пропуски 0   
+copy     кадры 707  пропуски 0   
+copy     кадры 948  пропуски 0   
+copy     кадры 1189  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 4497.6 МБ/с
+принято: 481.33 к/с, 4497.6 МБ/с
+memcpy: 13040.5 МБ/с
+интервал хоста, мкс: min 798  среднее 2078  p50 2077  p99 2342  max 5654
+интервал камеры, мкс: min 1600  среднее 2078  p50 2077  p99 2339  max 2555  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 240
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.5 мс
+окно: 0.497 с
+по frame_id: 481.29 к/с, 4497.2 МБ/с
+принято: 481.29 к/с, 4497.2 МБ/с
+интервал хоста, мкс: min 1815  среднее 2078  p50 2077  p99 2337  max 2369
+интервал камеры, мкс: min 1809  среднее 2078  p50 2078  p99 2338  max 2364  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 225  пропуски 0   
+discard  кадры 466  пропуски 0   
+discard  кадры 707  пропуски 0   
+discard  кадры 948  пропуски 0   
+discard  кадры 1189  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.5 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 4497.6 МБ/с
+принято: 481.33 к/с, 4497.6 МБ/с
+интервал хоста, мкс: min 1594  среднее 2078  p50 2077  p99 2360  max 2559
+интервал камеры, мкс: min 1600  среднее 2078  p50 2077  p99 2358  max 2555  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 225  пропуски 0   
+copy     кадры 466  пропуски 0   
+copy     кадры 707  пропуски 0   
+copy     кадры 948  пропуски 0   
+copy     кадры 1189  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1427 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.5 мс
+окно: 2.963 с
+по frame_id: 481.34 к/с, 4497.6 МБ/с
+принято: 481.34 к/с, 4497.6 МБ/с
+memcpy: 12619.6 МБ/с
+интервал хоста, мкс: min 780  среднее 2078  p50 2077  p99 2448  max 6010
+интервал камеры, мкс: min 1438  среднее 2078  p50 2077  p99 2434  max 2710  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 6.5 мс
+окно: 0.492 с
+по frame_id: 199.00 к/с, 1859.5 МБ/с
+принято: 199.00 к/с, 1859.5 МБ/с
+интервал хоста, мкс: min 4546  среднее 5025  p50 5027  p99 5368  max 5539
+интервал камеры, мкс: min 4535  среднее 5025  p50 5026  p99 5389  max 5512  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 84  пропуски 0   
+discard  кадры 184  пропуски 0   
+discard  кадры 284  пропуски 0   
+discard  кадры 384  пропуски 0   
+discard  кадры 484  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 6.5 мс
+окно: 2.909 с
+по frame_id: 199.01 к/с, 1859.6 МБ/с
+принято: 199.01 к/с, 1859.6 МБ/с
+интервал хоста, мкс: min 4528  среднее 5025  p50 5025  p99 5455  max 5538
+интервал камеры, мкс: min 4532  среднее 5025  p50 5026  p99 5454  max 5535  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 84  пропуски 0   
+copy     кадры 184  пропуски 0   
+copy     кадры 284  пропуски 0   
+copy     кадры 384  пропуски 0   
+copy     кадры 484  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x1000, кадр 9344000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 6.5 мс
+окно: 2.909 с
+по frame_id: 199.01 к/с, 1859.6 МБ/с
+принято: 199.01 к/с, 1859.6 МБ/с
+memcpy: 11278.9 МБ/с
+интервал хоста, мкс: min 4456  среднее 5025  p50 5025  p99 5485  max 5890
+интервал камеры, мкс: min 4518  среднее 5025  p50 5025  p99 5445  max 5549  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h1000_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 2
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 8589
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 17209.89 к/с, 321.6 МБ/с
+принято: 17209.89 к/с, 321.6 МБ/с
+интервал хоста, мкс: min 3  среднее 58  p50 71  p99 100  max 443
+интервал камеры, мкс: min 3  среднее 82  p50 72  p99 103  max 200468  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 6127  пропуски 0   
+discard  кадры 12262  пропуски 0   
+discard  кадры 18397  пропуски 0   
+discard  кадры 24533  пропуски 0   
+discard  кадры 30668  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 36788 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 12269.55 к/с, 229.3 МБ/с
+принято: 12269.55 к/с, 229.3 МБ/с
+интервал хоста, мкс: min 4  среднее 82  p50 84  p99 103  max 1484
+интервал камеры, мкс: min 4  среднее 82  p50 81  p99 106  max 1475  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 6127  пропуски 0   
+copy     кадры 12262  пропуски 0   
+copy     кадры 18397  пропуски 0   
+copy     кадры 24532  пропуски 0   
+copy     кадры 30667  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 36788 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 12269.61 к/с, 229.3 МБ/с
+принято: 12269.61 к/с, 229.3 МБ/с
+memcpy: 7631.2 МБ/с
+интервал хоста, мкс: min 8  среднее 82  p50 81  p99 100  max 220
+интервал камеры, мкс: min 6  среднее 82  p50 82  p99 102  max 206  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 4008
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 8029.28 к/с, 150.1 МБ/с
+принято: 8029.28 к/с, 150.1 МБ/с
+интервал хоста, мкс: min 5  среднее 125  p50 125  p99 152  max 171
+интервал камеры, мкс: min 85  среднее 125  p50 125  p99 149  max 163  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 4000  пропуски 0   
+discard  кадры 8012  пропуски 0   
+discard  кадры 12024  пропуски 0   
+discard  кадры 16036  пропуски 0   
+discard  кадры 20048  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 24048 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 8022.16 к/с, 149.9 МБ/с
+принято: 8022.16 к/с, 149.9 МБ/с
+интервал хоста, мкс: min 4  среднее 125  p50 124  p99 152  max 1582
+интервал камеры, мкс: min 4  среднее 125  p50 125  p99 150  max 640  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 4000  пропуски 0   
+copy     кадры 8012  пропуски 0   
+copy     кадры 12024  пропуски 0   
+copy     кадры 16036  пропуски 0   
+copy     кадры 20048  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 24048 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 8022.14 к/с, 149.9 МБ/с
+принято: 8022.14 к/с, 149.9 МБ/с
+memcpy: 7462.0 МБ/с
+интервал хоста, мкс: min 12  среднее 125  p50 124  p99 153  max 219
+интервал камеры, мкс: min 37  среднее 125  p50 126  p99 150  max 210  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 488
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 0.499 с
+по frame_id: 975.92 к/с, 18.2 МБ/с
+принято: 975.92 к/с, 18.2 МБ/с
+интервал хоста, мкс: min 990  среднее 1025  p50 1026  p99 1053  max 1061
+интервал камеры, мкс: min 995  среднее 1025  p50 1024  p99 1050  max 1053  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 473  пропуски 0   
+discard  кадры 961  пропуски 0   
+discard  кадры 1449  пропуски 0   
+discard  кадры 1937  пропуски 0   
+discard  кадры 2425  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2912 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 975.91 к/с, 18.2 МБ/с
+принято: 975.91 к/с, 18.2 МБ/с
+интервал хоста, мкс: min 963  среднее 1025  p50 1025  p99 1054  max 1088
+интервал камеры, мкс: min 965  среднее 1025  p50 1025  p99 1051  max 1077  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 473  пропуски 0   
+copy     кадры 961  пропуски 0   
+copy     кадры 1449  пропуски 0   
+copy     кадры 1937  пропуски 0   
+copy     кадры 2425  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2912 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 975.91 к/с, 18.2 МБ/с
+принято: 975.91 к/с, 18.2 МБ/с
+memcpy: 6824.3 МБ/с
+интервал хоста, мкс: min 880  среднее 1025  p50 1025  p99 1054  max 1166
+интервал камеры, мкс: min 980  среднее 1025  p50 1026  p99 1051  max 1073  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 0.492 с
+по frame_id: 198.99 к/с, 3.7 МБ/с
+принято: 198.99 к/с, 3.7 МБ/с
+интервал хоста, мкс: min 4718  среднее 5025  p50 5023  p99 5344  max 5394
+интервал камеры, мкс: min 4717  среднее 5025  p50 5030  p99 5305  max 5342  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 84  пропуски 0   
+discard  кадры 184  пропуски 0   
+discard  кадры 284  пропуски 0   
+discard  кадры 384  пропуски 0   
+discard  кадры 484  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 581 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.6 мс
+окно: 2.914 с
+по frame_id: 199.03 к/с, 3.7 МБ/с
+принято: 199.03 к/с, 3.7 МБ/с
+интервал хоста, мкс: min 4472  среднее 5024  p50 5025  p99 5367  max 5569
+интервал камеры, мкс: min 4479  среднее 5025  p50 5024  p99 5366  max 5562  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 84  пропуски 0   
+copy     кадры 184  пропуски 0   
+copy     кадры 284  пропуски 0   
+copy     кадры 384  пропуски 0   
+copy     кадры 484  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 9344x2, кадр 18688 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 581 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.914 с
+по frame_id: 199.02 к/с, 3.7 МБ/с
+принято: 199.02 к/с, 3.7 МБ/с
+memcpy: 6173.6 МБ/с
+интервал хоста, мкс: min 4493  среднее 5025  p50 5023  p99 5376  max 5580
+интервал камеры, мкс: min 4471  среднее 5025  p50 5024  p99 5378  max 5572  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w9344_h2_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 256
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 1000
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 241  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 241
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 0.499 с
+по frame_id: 481.32 к/с, 123.2 МБ/с
+принято: 481.32 к/с, 123.2 МБ/с
+интервал хоста, мкс: min 1749  среднее 2078  p50 2078  p99 2341  max 2408
+интервал камеры, мкс: min 1747  среднее 2078  p50 2078  p99 2340  max 2409  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 225  пропуски 0   
+discard  кадры 466  пропуски 0   
+discard  кадры 707  пропуски 0   
+discard  кадры 948  пропуски 0   
+discard  кадры 1189  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.5 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 123.2 МБ/с
+принято: 481.33 к/с, 123.2 МБ/с
+интервал хоста, мкс: min 1588  среднее 2078  p50 2077  p99 2452  max 2574
+интервал камеры, мкс: min 1576  среднее 2078  p50 2078  p99 2469  max 2573  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 225  пропуски 0   
+copy     кадры 466  пропуски 0   
+copy     кадры 707  пропуски 0   
+copy     кадры 948  пропуски 0   
+copy     кадры 1189  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.5 мс
+окно: 2.965 с
+по frame_id: 481.31 к/с, 123.2 МБ/с
+принято: 481.31 к/с, 123.2 МБ/с
+memcpy: 14228.6 МБ/с
+интервал хоста, мкс: min 1585  среднее 2078  p50 2077  p99 2465  max 2575
+интервал камеры, мкс: min 1580  среднее 2078  p50 2078  p99 2458  max 2574  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 241  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 241
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 0.499 с
+по frame_id: 481.33 к/с, 123.2 МБ/с
+принято: 481.33 к/с, 123.2 МБ/с
+интервал хоста, мкс: min 1604  среднее 2078  p50 2078  p99 2475  max 2551
+интервал камеры, мкс: min 1604  среднее 2078  p50 2078  p99 2473  max 2552  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 225  пропуски 0   
+discard  кадры 466  пропуски 0   
+discard  кадры 707  пропуски 0   
+discard  кадры 948  пропуски 0   
+discard  кадры 1189  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 123.2 МБ/с
+принято: 481.33 к/с, 123.2 МБ/с
+интервал хоста, мкс: min 1562  среднее 2078  p50 2078  p99 2504  max 2597
+интервал камеры, мкс: min 1588  среднее 2078  p50 2078  p99 2469  max 2577  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 225  пропуски 0   
+copy     кадры 466  пропуски 0   
+copy     кадры 707  пропуски 0   
+copy     кадры 948  пропуски 0   
+copy     кадры 1189  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 1.6 мс
+окно: 2.965 с
+по frame_id: 481.34 к/с, 123.2 МБ/с
+принято: 481.34 к/с, 123.2 МБ/с
+memcpy: 14912.6 МБ/с
+интервал хоста, мкс: min 1595  среднее 2078  p50 2077  p99 2406  max 2561
+интервал камеры, мкс: min 1590  среднее 2078  p50 2078  p99 2396  max 2562  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 240
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.5 мс
+окно: 0.497 с
+по frame_id: 481.33 к/с, 123.2 МБ/с
+принято: 481.33 к/с, 123.2 МБ/с
+интервал хоста, мкс: min 1609  среднее 2078  p50 2077  p99 2508  max 2564
+интервал камеры, мкс: min 1611  среднее 2078  p50 2078  p99 2504  max 2565  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 225  пропуски 0   
+discard  кадры 466  пропуски 0   
+discard  кадры 707  пропуски 0   
+discard  кадры 948  пропуски 0   
+discard  кадры 1189  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.2 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 123.2 МБ/с
+принято: 481.33 к/с, 123.2 МБ/с
+интервал хоста, мкс: min 1570  среднее 2078  p50 2077  p99 2407  max 2581
+интервал камеры, мкс: min 1574  среднее 2078  p50 2077  p99 2405  max 2576  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 225  пропуски 0   
+copy     кадры 466  пропуски 0   
+copy     кадры 707  пропуски 0   
+copy     кадры 948  пропуски 0   
+copy     кадры 1189  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1428 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.5 мс
+окно: 2.965 с
+по frame_id: 481.33 к/с, 123.2 МБ/с
+принято: 481.33 к/с, 123.2 МБ/с
+memcpy: 14379.2 МБ/с
+интервал хоста, мкс: min 1589  среднее 2078  p50 2077  p99 2475  max 2567
+интервал камеры, мкс: min 1593  среднее 2078  p50 2078  p99 2476  max 2566  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 6.6 мс
+окно: 0.492 с
+по frame_id: 199.01 к/с, 50.9 МБ/с
+принято: 199.01 к/с, 50.9 МБ/с
+интервал хоста, мкс: min 4612  среднее 5025  p50 5024  p99 5348  max 5434
+интервал камеры, мкс: min 4628  среднее 5025  p50 5024  p99 5300  max 5470  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 84  пропуски 0   
+discard  кадры 184  пропуски 0   
+discard  кадры 284  пропуски 0   
+discard  кадры 384  пропуски 0   
+discard  кадры 484  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 6.5 мс
+окно: 2.909 с
+по frame_id: 199.01 к/с, 50.9 МБ/с
+принято: 199.01 к/с, 50.9 МБ/с
+интервал хоста, мкс: min 4556  среднее 5025  p50 5025  p99 5379  max 5528
+интервал камеры, мкс: min 4570  среднее 5025  p50 5025  p99 5379  max 5525  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 84  пропуски 0   
+copy     кадры 184  пропуски 0   
+copy     кадры 284  пропуски 0   
+copy     кадры 384  пропуски 0   
+copy     кадры 484  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x1000, кадр 256000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 6.5 мс
+окно: 2.909 с
+по frame_id: 199.01 к/с, 50.9 МБ/с
+принято: 199.01 к/с, 50.9 МБ/с
+memcpy: 15936.3 МБ/с
+интервал хоста, мкс: min 4530  среднее 5025  p50 5023  p99 5453  max 5527
+интервал камеры, мкс: min 4516  среднее 5025  p50 5025  p99 5441  max 5532  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h1000_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 2
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 6131
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 12283.35 к/с, 6.3 МБ/с
+принято: 12283.35 к/с, 6.3 МБ/с
+интервал хоста, мкс: min 4  среднее 81  p50 84  p99 104  max 138
+интервал камеры, мкс: min 18  среднее 81  p50 82  p99 107  max 137  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 6127  пропуски 0   
+discard  кадры 12262  пропуски 0   
+discard  кадры 18397  пропуски 0   
+discard  кадры 24532  пропуски 0   
+discard  кадры 30667  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 36788 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 12269.58 к/с, 6.3 МБ/с
+принято: 12269.58 к/с, 6.3 МБ/с
+интервал хоста, мкс: min 4  среднее 82  p50 84  p99 103  max 187
+интервал камеры, мкс: min 5  среднее 82  p50 82  p99 106  max 177  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 6127  пропуски 0   
+copy     кадры 12262  пропуски 0   
+copy     кадры 18397  пропуски 0   
+copy     кадры 24532  пропуски 0   
+copy     кадры 30667  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 36788 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 12269.58 к/с, 6.3 МБ/с
+принято: 12269.58 к/с, 6.3 МБ/с
+memcpy: 377.1 МБ/с
+интервал хоста, мкс: min 8  среднее 82  p50 81  p99 102  max 189
+интервал камеры, мкс: min 5  среднее 82  p50 82  p99 106  max 171  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 4008
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 8028.47 к/с, 4.1 МБ/с
+принято: 8028.47 к/с, 4.1 МБ/с
+интервал хоста, мкс: min 6  среднее 125  p50 123  p99 152  max 178
+интервал камеры, мкс: min 74  среднее 125  p50 123  p99 149  max 178  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 4000  пропуски 0   
+discard  кадры 8012  пропуски 0   
+discard  кадры 12024  пропуски 0   
+discard  кадры 16036  пропуски 0   
+discard  кадры 20048  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 24048 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 8022.14 к/с, 4.1 МБ/с
+принято: 8022.14 к/с, 4.1 МБ/с
+интервал хоста, мкс: min 60  среднее 125  p50 124  p99 152  max 203
+интервал камеры, мкс: min 74  среднее 125  p50 125  p99 150  max 175  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 4000  пропуски 0   
+copy     кадры 8012  пропуски 0   
+copy     кадры 12024  пропуски 0   
+copy     кадры 16036  пропуски 0   
+copy     кадры 20048  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 24047 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.997 с
+по frame_id: 8022.20 к/с, 4.1 МБ/с
+принято: 8022.20 к/с, 4.1 МБ/с
+memcpy: 306.0 МБ/с
+интервал хоста, мкс: min 9  среднее 125  p50 125  p99 153  max 267
+интервал камеры, мкс: min 7  среднее 125  p50 125  p99 150  max 265  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 488
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 0.499 с
+по frame_id: 975.91 к/с, 0.5 МБ/с
+принято: 975.91 к/с, 0.5 МБ/с
+интервал хоста, мкс: min 988  среднее 1025  p50 1025  p99 1052  max 1082
+интервал камеры, мкс: min 990  среднее 1025  p50 1027  p99 1051  max 1062  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 473  пропуски 0   
+discard  кадры 961  пропуски 0   
+discard  кадры 1449  пропуски 0   
+discard  кадры 1937  пропуски 0   
+discard  кадры 2425  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2912 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 975.91 к/с, 0.5 МБ/с
+принято: 975.91 к/с, 0.5 МБ/с
+интервал хоста, мкс: min 977  среднее 1025  p50 1025  p99 1057  max 1101
+интервал камеры, мкс: min 986  среднее 1025  p50 1024  p99 1053  max 1077  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 473  пропуски 0   
+copy     кадры 961  пропуски 0   
+copy     кадры 1449  пропуски 0   
+copy     кадры 1937  пропуски 0   
+copy     кадры 2425  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2912 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 975.91 к/с, 0.5 МБ/с
+принято: 975.91 к/с, 0.5 МБ/с
+memcpy: 293.8 МБ/с
+интервал хоста, мкс: min 973  среднее 1025  p50 1026  p99 1056  max 1076
+интервал камеры, мкс: min 972  среднее 1025  p50 1025  p99 1053  max 1072  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 0.492 с
+по frame_id: 199.00 к/с, 0.1 МБ/с
+принято: 199.00 к/с, 0.1 МБ/с
+интервал хоста, мкс: min 4549  среднее 5025  p50 5027  p99 5472  max 5495
+интервал камеры, мкс: min 4556  среднее 5025  p50 5024  p99 5462  max 5495  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 84  пропуски 0   
+discard  кадры 184  пропуски 0   
+discard  кадры 284  пропуски 0   
+discard  кадры 384  пропуски 0   
+discard  кадры 484  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 581 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.915 с
+по frame_id: 198.99 к/с, 0.1 МБ/с
+принято: 198.99 к/с, 0.1 МБ/с
+интервал хоста, мкс: min 4563  среднее 5025  p50 5025  p99 5351  max 5493
+интервал камеры, мкс: min 4558  среднее 5025  p50 5024  p99 5345  max 5493  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 84  пропуски 0   
+copy     кадры 184  пропуски 0   
+copy     кадры 284  пропуски 0   
+copy     кадры 384  пропуски 0   
+copy     кадры 484  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono8, 256x2, кадр 512 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 581 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.914 с
+по frame_id: 199.02 к/с, 0.1 МБ/с
+принято: 199.02 к/с, 0.1 МБ/с
+memcpy: 283.9 МБ/с
+интервал хоста, мкс: min 2987  среднее 5025  p50 5025  p99 5447  max 7073
+интервал камеры, мкс: min 4452  среднее 5025  p50 5024  p99 5406  max 5606  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono8_w256_h2_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat: ok
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono10
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 9344
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 1000
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 194
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.0 мс
+окно: 0.497 с
+по frame_id: 388.66 к/с, 7263.2 МБ/с
+принято: 388.66 к/с, 7263.2 МБ/с
+интервал хоста, мкс: min 2104  среднее 2573  p50 2572  p99 2960  max 3033
+интервал камеры, мкс: min 2105  среднее 2573  p50 2572  p99 2963  max 3034  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 179  пропуски 0   
+discard  кадры 374  пропуски 0   
+discard  кадры 569  пропуски 0   
+discard  кадры 764  пропуски 0   
+discard  кадры 959  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.0 мс
+окно: 2.956 с
+по frame_id: 388.74 к/с, 7264.8 МБ/с
+принято: 388.74 к/с, 7264.8 МБ/с
+интервал хоста, мкс: min 1907  среднее 2572  p50 2572  p99 2936  max 3232
+интервал камеры, мкс: min 1911  среднее 2572  p50 2572  p99 2953  max 3238  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 156  пропуски 0   
+copy     кадры 331  пропуски 0   
+copy     кадры 504  пропуски 15   
+copy     кадры 676  пропуски 38   
+copy     кадры 849  пропуски 61   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1016 (прогрев 16 не входит в скорость)
+пропуски frame_id: 83
+таймауты: 0
+до первого кадра: 2.0 мс
+окно: 2.955 с
+по frame_id: 371.61 к/с, 6944.7 МБ/с
+принято: 343.52 к/с, 6419.7 МБ/с
+memcpy: 6458.5 МБ/с
+интервал хоста, мкс: min 1539  среднее 2911  p50 3517  p99 4623  max 13892
+интервал камеры, мкс: min 2059  среднее 2893  p50 2608  p99 3953  max 4133  (такт 1000000 Гц)
+в номерах кадров есть дыры: часть кадров не дошла
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 194
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.1 мс
+окно: 0.496 с
+по frame_id: 388.74 к/с, 7264.7 МБ/с
+принято: 388.74 к/с, 7264.7 МБ/с
+интервал хоста, мкс: min 2088  среднее 2572  p50 2572  p99 2920  max 3059
+интервал камеры, мкс: min 2088  среднее 2572  p50 2572  p99 2919  max 3059  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 179  пропуски 0   
+discard  кадры 374  пропуски 0   
+discard  кадры 569  пропуски 0   
+discard  кадры 764  пропуски 0   
+discard  кадры 959  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.1 мс
+окно: 2.956 с
+по frame_id: 388.75 к/с, 7264.9 МБ/с
+принято: 388.75 к/с, 7264.9 МБ/с
+интервал хоста, мкс: min 1984  среднее 2572  p50 2572  p99 2970  max 3167
+интервал камеры, мкс: min 1982  среднее 2572  p50 2572  p99 2959  max 3169  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 154  пропуски 0   
+copy     кадры 328  пропуски 0   
+copy     кадры 502  пропуски 16   
+copy     кадры 676  пропуски 37   
+copy     кадры 850  пропуски 58   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1019 (прогрев 16 не входит в скорость)
+пропуски frame_id: 79
+таймауты: 0
+до первого кадра: 2.1 мс
+окно: 2.953 с
+по frame_id: 371.52 к/с, 6943.0 МБ/с
+принято: 344.77 к/с, 6443.0 МБ/с
+memcpy: 6476.3 МБ/с
+интервал хоста, мкс: min 1548  среднее 2900  p50 2856  p99 4611  max 13808
+интервал камеры, мкс: min 2029  среднее 2884  p50 2644  p99 3927  max 4082  (такт 1000000 Гц)
+в номерах кадров есть дыры: часть кадров не дошла
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 194
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 3.1 мс
+окно: 0.496 с
+по frame_id: 388.73 к/с, 7264.6 МБ/с
+принято: 388.73 к/с, 7264.6 МБ/с
+интервал хоста, мкс: min 2115  среднее 2572  p50 2572  p99 2846  max 2962
+интервал камеры, мкс: min 2114  среднее 2572  p50 2572  p99 2847  max 2961  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 179  пропуски 0   
+discard  кадры 374  пропуски 0   
+discard  кадры 569  пропуски 0   
+discard  кадры 764  пропуски 0   
+discard  кадры 959  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 3.0 мс
+окно: 2.956 с
+по frame_id: 388.74 к/с, 7264.9 МБ/с
+принято: 388.74 к/с, 7264.9 МБ/с
+интервал хоста, мкс: min 2071  среднее 2572  p50 2572  p99 2934  max 3073
+интервал камеры, мкс: min 2072  среднее 2572  p50 2572  p99 2927  max 3068  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 155  пропуски 0   
+copy     кадры 328  пропуски 0   
+copy     кадры 499  пропуски 20   
+copy     кадры 670  пропуски 44   
+copy     кадры 842  пропуски 67   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1010 (прогрев 16 не входит в скорость)
+пропуски frame_id: 88
+таймауты: 0
+до первого кадра: 3.0 мс
+окно: 2.954 с
+по frame_id: 371.39 к/с, 6940.5 МБ/с
+принято: 341.60 к/с, 6383.7 МБ/с
+memcpy: 6422.8 МБ/с
+интервал хоста, мкс: min 1544  среднее 2927  p50 3578  p99 4678  max 13894
+интервал камеры, мкс: min 2075  среднее 2910  p50 2690  p99 4004  max 4146  (такт 1000000 Гц)
+в номерах кадров есть дыры: часть кадров не дошла
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 99  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 7.1 мс
+окно: 0.493 с
+по frame_id: 198.70 к/с, 3713.3 МБ/с
+принято: 198.70 к/с, 3713.3 МБ/с
+интервал хоста, мкс: min 4593  среднее 5033  p50 5033  p99 5442  max 5499
+интервал камеры, мкс: min 4594  среднее 5033  p50 5033  p99 5441  max 5498  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 83  пропуски 0   
+discard  кадры 183  пропуски 0   
+discard  кадры 283  пропуски 0   
+discard  кадры 383  пропуски 0   
+discard  кадры 483  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 579 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 7.0 мс
+окно: 2.909 с
+по frame_id: 198.70 к/с, 3713.4 МБ/с
+принято: 198.70 к/с, 3713.4 МБ/с
+интервал хоста, мкс: min 4646  среднее 5033  p50 5032  p99 5394  max 5423
+интервал камеры, мкс: min 4611  среднее 5033  p50 5032  p99 5391  max 5454  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 83  пропуски 0   
+copy     кадры 183  пропуски 0   
+copy     кадры 283  пропуски 0   
+copy     кадры 383  пропуски 0   
+copy     кадры 483  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x1000, кадр 18688000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 579 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 7.0 мс
+окно: 2.909 с
+по frame_id: 198.69 к/с, 3713.2 МБ/с
+принято: 198.69 к/с, 3713.2 МБ/с
+memcpy: 6752.5 МБ/с
+интервал хоста, мкс: min 1540  среднее 5033  p50 5032  p99 5370  max 13877
+интервал камеры, мкс: min 4502  среднее 5033  p50 5032  p99 5366  max 5563  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h1000_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 2
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 4945
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 9906.22 к/с, 370.3 МБ/с
+принято: 9906.22 к/с, 370.3 МБ/с
+интервал хоста, мкс: min 4  среднее 101  p50 101  p99 111  max 133
+интервал камеры, мкс: min 69  среднее 101  p50 101  p99 109  max 141  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 4938  пропуски 0   
+discard  кадры 9886  пропуски 0   
+discard  кадры 14834  пропуски 0   
+discard  кадры 19782  пропуски 0   
+discard  кадры 24730  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 29668 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 9895.79 к/с, 369.9 МБ/с
+принято: 9895.79 к/с, 369.9 МБ/с
+интервал хоста, мкс: min 4  среднее 101  p50 101  p99 112  max 296
+интервал камеры, мкс: min 5  среднее 101  p50 101  p99 110  max 287  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 4939  пропуски 0   
+copy     кадры 9887  пропуски 0   
+copy     кадры 14835  пропуски 0   
+copy     кадры 19783  пропуски 0   
+copy     кадры 24731  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 29668 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 9895.77 к/с, 369.9 МБ/с
+принято: 9895.77 к/с, 369.9 МБ/с
+memcpy: 11709.2 МБ/с
+интервал хоста, мкс: min 9  среднее 101  p50 101  p99 111  max 682
+интервал камеры, мкс: min 60  среднее 101  p50 101  p99 109  max 142  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 5291
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 10600.17 к/с, 396.2 МБ/с
+принято: 10600.17 к/с, 396.2 МБ/с
+интервал хоста, мкс: min 3  среднее 94  p50 112  p99 163  max 259
+интервал камеры, мкс: min 3  среднее 132  p50 112  p99 160  max 200697  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 3765  пропуски 0   
+discard  кадры 7542  пропуски 0   
+discard  кадры 11319  пропуски 0   
+discard  кадры 15096  пропуски 0   
+discard  кадры 18873  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 22639 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.997 с
+по frame_id: 7552.62 к/с, 282.3 МБ/с
+принято: 7552.62 к/с, 282.3 МБ/с
+интервал хоста, мкс: min 70  среднее 132  p50 133  p99 164  max 199
+интервал камеры, мкс: min 64  среднее 132  p50 133  p99 161  max 199  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 3765  пропуски 0   
+copy     кадры 7542  пропуски 0   
+copy     кадры 11319  пропуски 0   
+copy     кадры 15096  пропуски 0   
+copy     кадры 18873  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 22639 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.997 с
+по frame_id: 7552.66 к/с, 282.3 МБ/с
+принято: 7552.66 к/с, 282.3 МБ/с
+memcpy: 11168.2 МБ/с
+интервал хоста, мкс: min 10  среднее 132  p50 134  p99 165  max 264
+интервал камеры, мкс: min 6  среднее 132  p50 134  p99 161  max 264  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 485
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.2 мс
+окно: 0.500 с
+по frame_id: 968.61 к/с, 36.2 МБ/с
+принято: 968.61 к/с, 36.2 МБ/с
+интервал хоста, мкс: min 988  среднее 1032  p50 1035  p99 1067  max 1086
+интервал камеры, мкс: min 996  среднее 1032  p50 1032  p99 1063  max 1072  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 469  пропуски 0   
+discard  кадры 954  пропуски 0   
+discard  кадры 1439  пропуски 0   
+discard  кадры 1924  пропуски 0   
+discard  кадры 2409  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2890 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 968.58 к/с, 36.2 МБ/с
+принято: 968.58 к/с, 36.2 МБ/с
+интервал хоста, мкс: min 960  среднее 1032  p50 1036  p99 1069  max 1111
+интервал камеры, мкс: min 980  среднее 1032  p50 1034  p99 1065  max 1088  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 469  пропуски 0   
+copy     кадры 954  пропуски 0   
+copy     кадры 1439  пропуски 0   
+copy     кадры 1924  пропуски 0   
+copy     кадры 2409  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2890 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 968.59 к/с, 36.2 МБ/с
+принято: 968.59 к/с, 36.2 МБ/с
+memcpy: 9774.2 МБ/с
+интервал хоста, мкс: min 978  среднее 1032  p50 1033  p99 1068  max 1100
+интервал камеры, мкс: min 988  среднее 1032  p50 1032  p99 1064  max 1085  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 0.493 с
+по frame_id: 198.70 к/с, 7.4 МБ/с
+принято: 198.70 к/с, 7.4 МБ/с
+интервал хоста, мкс: min 4731  среднее 5033  p50 5031  p99 5334  max 5334
+интервал камеры, мкс: min 4728  среднее 5033  p50 5036  p99 5334  max 5336  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 84  пропуски 0   
+discard  кадры 184  пропуски 0   
+discard  кадры 284  пропуски 0   
+discard  кадры 384  пропуски 0   
+discard  кадры 484  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.914 с
+по frame_id: 198.71 к/с, 7.4 МБ/с
+принято: 198.71 к/с, 7.4 МБ/с
+интервал хоста, мкс: min 4570  среднее 5033  p50 5032  p99 5419  max 5516
+интервал камеры, мкс: min 4562  среднее 5033  p50 5032  p99 5416  max 5517  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 84  пропуски 0   
+copy     кадры 184  пропуски 0   
+copy     кадры 284  пропуски 0   
+copy     кадры 384  пропуски 0   
+copy     кадры 484  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 9344x2, кадр 37376 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.914 с
+по frame_id: 198.69 к/с, 7.4 МБ/с
+принято: 198.69 к/с, 7.4 МБ/с
+memcpy: 9032.5 МБ/с
+интервал хоста, мкс: min 4563  среднее 5033  p50 5032  p99 5462  max 5541
+интервал камеры, мкс: min 4546  среднее 5033  p50 5029  p99 5456  max 5531  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w9344_h2_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 256
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 1000
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 194
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.0 мс
+окно: 0.496 с
+по frame_id: 388.74 к/с, 199.0 МБ/с
+принято: 388.74 к/с, 199.0 МБ/с
+интервал хоста, мкс: min 2089  среднее 2572  p50 2571  p99 3023  max 3113
+интервал камеры, мкс: min 2060  среднее 2572  p50 2572  p99 3034  max 3111  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 179  пропуски 0   
+discard  кадры 374  пропуски 0   
+discard  кадры 569  пропуски 0   
+discard  кадры 764  пропуски 0   
+discard  кадры 959  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.0 мс
+окно: 2.956 с
+по frame_id: 388.71 к/с, 199.0 МБ/с
+принято: 388.71 к/с, 199.0 МБ/с
+интервал хоста, мкс: min 2053  среднее 2573  p50 2572  p99 2944  max 3082
+интервал камеры, мкс: min 2049  среднее 2573  p50 2573  p99 2948  max 3085  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 179  пропуски 0   
+copy     кадры 374  пропуски 0   
+copy     кадры 569  пропуски 0   
+copy     кадры 764  пропуски 0   
+copy     кадры 959  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.0 мс
+окно: 2.956 с
+по frame_id: 388.76 к/с, 199.0 МБ/с
+принято: 388.76 к/с, 199.0 МБ/с
+memcpy: 14894.3 МБ/с
+интервал хоста, мкс: min 2021  среднее 2572  p50 2572  p99 2954  max 3128
+интервал камеры, мкс: min 2021  среднее 2572  p50 2572  p99 2960  max 3128  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 194
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.1 мс
+окно: 0.496 с
+по frame_id: 388.75 к/с, 199.0 МБ/с
+принято: 388.75 к/с, 199.0 МБ/с
+интервал хоста, мкс: min 2042  среднее 2572  p50 2572  p99 3009  max 3109
+интервал камеры, мкс: min 2051  среднее 2572  p50 2572  p99 3006  max 3100  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 179  пропуски 0   
+discard  кадры 374  пропуски 0   
+discard  кадры 569  пропуски 0   
+discard  кадры 764  пропуски 0   
+discard  кадры 959  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.2 мс
+окно: 2.956 с
+по frame_id: 388.75 к/с, 199.0 МБ/с
+принято: 388.75 к/с, 199.0 МБ/с
+интервал хоста, мкс: min 2080  среднее 2572  p50 2572  p99 2890  max 3046
+интервал камеры, мкс: min 2074  среднее 2572  p50 2573  p99 2892  max 3049  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 179  пропуски 0   
+copy     кадры 374  пропуски 0   
+copy     кадры 569  пропуски 0   
+copy     кадры 764  пропуски 0   
+copy     кадры 959  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 2.1 мс
+окно: 2.956 с
+по frame_id: 388.75 к/с, 199.0 МБ/с
+принято: 388.75 к/с, 199.0 МБ/с
+memcpy: 14792.4 МБ/с
+интервал хоста, мкс: min 1920  среднее 2572  p50 2572  p99 2904  max 3218
+интервал камеры, мкс: min 1917  среднее 2572  p50 2572  p99 2907  max 3234  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 194
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 3.0 мс
+окно: 0.496 с
+по frame_id: 388.73 к/с, 199.0 МБ/с
+принято: 388.73 к/с, 199.0 МБ/с
+интервал хоста, мкс: min 2050  среднее 2572  p50 2572  p99 2927  max 3098
+интервал камеры, мкс: min 2043  среднее 2572  p50 2572  p99 2930  max 3100  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 179  пропуски 0   
+discard  кадры 374  пропуски 0   
+discard  кадры 569  пропуски 0   
+discard  кадры 764  пропуски 0   
+discard  кадры 959  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 3.0 мс
+окно: 2.956 с
+по frame_id: 388.75 к/с, 199.0 МБ/с
+принято: 388.75 к/с, 199.0 МБ/с
+интервал хоста, мкс: min 1936  среднее 2572  p50 2572  p99 2925  max 3222
+интервал камеры, мкс: min 1943  среднее 2572  p50 2572  p99 2928  max 3212  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 179  пропуски 0   
+copy     кадры 374  пропуски 0   
+copy     кадры 569  пропуски 0   
+copy     кадры 764  пропуски 0   
+copy     кадры 959  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 1150 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 3.0 мс
+окно: 2.956 с
+по frame_id: 388.74 к/с, 199.0 МБ/с
+принято: 388.74 к/с, 199.0 МБ/с
+memcpy: 16222.3 МБ/с
+интервал хоста, мкс: min 2078  среднее 2572  p50 2572  p99 2924  max 3061
+интервал камеры, мкс: min 2077  среднее 2572  p50 2572  p99 2929  max 3061  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 99  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 7.1 мс
+окно: 0.493 с
+по frame_id: 198.64 к/с, 101.7 МБ/с
+принято: 198.64 к/с, 101.7 МБ/с
+интервал хоста, мкс: min 4681  среднее 5034  p50 5034  p99 5293  max 5295
+интервал камеры, мкс: min 4693  среднее 5034  p50 5031  p99 5299  max 5332  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 83  пропуски 0   
+discard  кадры 183  пропуски 0   
+discard  кадры 283  пропуски 0   
+discard  кадры 383  пропуски 0   
+discard  кадры 483  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 579 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 7.0 мс
+окно: 2.909 с
+по frame_id: 198.70 к/с, 101.7 МБ/с
+принято: 198.70 к/с, 101.7 МБ/с
+интервал хоста, мкс: min 4519  среднее 5033  p50 5033  p99 5381  max 5552
+интервал камеры, мкс: min 4518  среднее 5033  p50 5032  p99 5384  max 5551  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 83  пропуски 0   
+copy     кадры 183  пропуски 0   
+copy     кадры 283  пропуски 0   
+copy     кадры 383  пропуски 0   
+copy     кадры 483  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x1000, кадр 512000 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 579 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 7.0 мс
+окно: 2.909 с
+по frame_id: 198.71 к/с, 101.7 МБ/с
+принято: 198.71 к/с, 101.7 МБ/с
+memcpy: 15423.8 МБ/с
+интервал хоста, мкс: min 4438  среднее 5032  p50 5032  p99 5430  max 5632
+интервал камеры, мкс: min 4440  среднее 5033  p50 5032  p99 5431  max 5632  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h1000_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 2
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 27
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 4945
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 9906.30 к/с, 10.1 МБ/с
+принято: 9906.30 к/с, 10.1 МБ/с
+интервал хоста, мкс: min 5  среднее 101  p50 101  p99 113  max 142
+интервал камеры, мкс: min 73  среднее 101  p50 101  p99 110  max 134  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 4939  пропуски 0   
+discard  кадры 9887  пропуски 0   
+discard  кадры 14835  пропуски 0   
+discard  кадры 19783  пропуски 0   
+discard  кадры 24731  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 29668 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 9895.78 к/с, 10.1 МБ/с
+принято: 9895.78 к/с, 10.1 МБ/с
+интервал хоста, мкс: min 4  среднее 101  p50 101  p99 111  max 1106
+интервал камеры, мкс: min 4  среднее 101  p50 101  p99 109  max 332  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e27_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 4939  пропуски 0   
+copy     кадры 9887  пропуски 0   
+copy     кадры 14835  пропуски 0   
+copy     кадры 19783  пропуски 0   
+copy     кадры 24731  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 27 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 29668 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.998 с
+по frame_id: 9895.77 к/с, 10.1 МБ/с
+принято: 9895.77 к/с, 10.1 МБ/с
+memcpy: 648.4 МБ/с
+интервал хоста, мкс: min 46  среднее 101  p50 101  p99 111  max 160
+интервал камеры, мкс: min 46  среднее 101  p50 101  p99 109  max 159  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e27_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 100
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 3774
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 0.499 с
+по frame_id: 7559.40 к/с, 7.7 МБ/с
+принято: 7559.40 к/с, 7.7 МБ/с
+интервал хоста, мкс: min 7  среднее 132  p50 128  p99 164  max 176
+интервал камеры, мкс: min 88  среднее 132  p50 133  p99 161  max 172  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 3765  пропуски 0   
+discard  кадры 7542  пропуски 0   
+discard  кадры 11319  пропуски 0   
+discard  кадры 15096  пропуски 0   
+discard  кадры 18873  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 22639 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.997 с
+по frame_id: 7552.63 к/с, 7.7 МБ/с
+принято: 7552.63 к/с, 7.7 МБ/с
+интервал хоста, мкс: min 4  среднее 132  p50 134  p99 166  max 410
+интервал камеры, мкс: min 4  среднее 132  p50 132  p99 163  max 411  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e100_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 3765  пропуски 0   
+copy     кадры 7542  пропуски 0   
+copy     кадры 11319  пропуски 0   
+copy     кадры 15096  пропуски 0   
+copy     кадры 18873  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 100 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 22639 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.0 мс
+окно: 2.997 с
+по frame_id: 7552.62 к/с, 7.7 МБ/с
+принято: 7552.62 к/с, 7.7 МБ/с
+memcpy: 616.3 МБ/с
+интервал хоста, мкс: min 64  среднее 132  p50 133  p99 165  max 198
+интервал камеры, мкс: min 81  среднее 132  p50 133  p99 162  max 190  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e100_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 1000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 484
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 0.499 с
+по frame_id: 968.55 к/с, 1.0 МБ/с
+принято: 968.55 к/с, 1.0 МБ/с
+интервал хоста, мкс: min 984  среднее 1032  p50 1035  p99 1069  max 1089
+интервал камеры, мкс: min 996  среднее 1032  p50 1035  p99 1065  max 1075  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 469  пропуски 0   
+discard  кадры 954  пропуски 0   
+discard  кадры 1439  пропуски 0   
+discard  кадры 1924  пропуски 0   
+discard  кадры 2409  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2890 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.5 мс
+окно: 2.983 с
+по frame_id: 968.59 к/с, 1.0 МБ/с
+принято: 968.59 к/с, 1.0 МБ/с
+интервал хоста, мкс: min 964  среднее 1032  p50 1033  p99 1068  max 1119
+интервал камеры, мкс: min 986  среднее 1032  p50 1033  p99 1064  max 1075  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e1000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 469  пропуски 0   
+copy     кадры 954  пропуски 0   
+copy     кадры 1439  пропуски 0   
+copy     кадры 1924  пропуски 0   
+copy     кадры 2409  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 1000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 2890 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 0.6 мс
+окно: 2.983 с
+по frame_id: 968.58 к/с, 1.0 МБ/с
+принято: 968.58 к/с, 1.0 МБ/с
+memcpy: 575.2 МБ/с
+интервал хоста, мкс: min 428  среднее 1032  p50 1033  p99 1068  max 1631
+интервал камеры, мкс: min 437  среднее 1032  p50 1033  p99 1063  max 1625  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e1000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 99
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 0.493 с
+по frame_id: 198.69 к/с, 0.2 МБ/с
+принято: 198.69 к/с, 0.2 МБ/с
+интервал хоста, мкс: min 4665  среднее 5033  p50 5034  p99 5333  max 5469
+интервал камеры, мкс: min 4632  среднее 5033  p50 5034  p99 5324  max 5461  (такт 1000000 Гц)
+пропусков по frame_id нет
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+discard  кадры 84  пропуски 0   
+discard  кадры 184  пропуски 0   
+discard  кадры 284  пропуски 0   
+discard  кадры 384  пропуски 0   
+discard  кадры 484  пропуски 0   
+
+--- discard ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.913 с
+по frame_id: 198.74 к/с, 0.2 МБ/с
+принято: 198.74 к/с, 0.2 МБ/с
+интервал хоста, мкс: min 4564  среднее 5032  p50 5028  p99 5426  max 5516
+интервал камеры, мкс: min 4556  среднее 5032  p50 5031  p99 5448  max 5526  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e5000_discard_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+старт захвата, буферов 8
+[SCAP INFO] begin start_gentl_capture, check param
+[SCAP INFO] start_gentl_capture result: (0)
+
+copy     кадры 84  пропуски 0   
+copy     кадры 184  пропуски 0   
+copy     кадры 284  пропуски 0   
+copy     кадры 384  пропуски 0   
+copy     кадры 484  пропуски 0   
+
+--- copy ---
+камера: MV-AX5F57MP050E Mono10, 256x2, кадр 1024 байт
+съёмка: выдержка 5000 мкс, GainRaw 1, AnalogGain 1, триггер Off, режим Continuous
+кадры: 580 (прогрев 16 не входит в скорость)
+пропуски frame_id: 0
+таймауты: 0
+до первого кадра: 4.5 мс
+окно: 2.914 с
+по frame_id: 198.70 к/с, 0.2 МБ/с
+принято: 198.70 к/с, 0.2 МБ/с
+memcpy: 534.5 МБ/с
+интервал хоста, мкс: min 4452  среднее 5033  p50 5039  p99 5388  max 5481
+интервал камеры, мкс: min 4439  среднее 5033  p50 5035  p99 5386  max 5499  (такт 1000000 Гц)
+пропусков по frame_id нет
+json: /home/user/work/GraberCam/experiments/fps-model-20261118-exposure/Mono10_w256_h2_e5000_copy_r1.json
+
+МБ/с = 10^6 байт/с. discard — камера, copy — память, disk — запись с камеры,
+sink — текущий диск без камеры, ssd — NVMe без камеры.
+DeviceSerialNumber = FG06273AAK00001
+OffsetX: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+Width: ok
+DeviceSerialNumber = FG06273AAK00001
+Width = 9344
+DeviceSerialNumber = FG06273AAK00001
+Height: ok
+DeviceSerialNumber = FG06273AAK00001
+Height = 7000
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat: ok
+DeviceSerialNumber = FG06273AAK00001
+PixelFormat = Mono8
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime: ok
+DeviceSerialNumber = FG06273AAK00001
+ExposureTime = 5000
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionMode = Continuous
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode: ok
+DeviceSerialNumber = FG06273AAK00001
+TriggerMode = Off
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable: ok
+DeviceSerialNumber = FG06273AAK00001
+AcquisitionFrameRateEnable = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetX: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetX = 0
+DeviceSerialNumber = FG06273AAK00001
+OffsetY: ok
+DeviceSerialNumber = FG06273AAK00001
+OffsetY = 0
+DeviceSerialNumber = FG06273AAK00001
+сессия закрыта
+close ds
+close dev
+close ds
+close dev
+[SCAP INFO] scap done begin
+_TLCloseclose_interface_info:0x60b7cd49a3f0
+[SCAP INFO] scap done end

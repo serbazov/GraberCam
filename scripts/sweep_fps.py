@@ -90,6 +90,11 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--binary', type=pathlib.Path, default=pathlib.Path('./grabercam'))
     p.add_argument('--out', type=pathlib.Path, default=pathlib.Path('experiments') / datetime.datetime.now().strftime('%Y%m%d-%H%M%S'))
+    p.add_argument('--formats', nargs='+', choices=['Mono8', 'Mono10', 'Mono12'], default=['Mono8'])
+    p.add_argument('--modes', nargs='+', choices=['discard', 'copy'], default=['discard', 'copy'])
+    p.add_argument('--warmup', type=int, default=16)
+    p.add_argument('--precondition-seconds', type=float, default=0,
+                   help='Discard capture before each configuration to drain previous frames; not measured')
     p.add_argument('--widths', nargs='+', type=int, default=[9344, 4672])
     p.add_argument('--heights', nargs='+', type=int, default=[7000, 2500, 1000, 500, 100, 16])
     p.add_argument('--exposures', nargs='+', type=int, default=[5000, 1000, 100, 27])
@@ -100,7 +105,7 @@ def main():
     def interrupted(signum, frame):
         raise KeyboardInterrupt(f'signal {signum}')
     signal.signal(signal.SIGTERM, interrupted)
-    if min(a.widths + a.heights + a.exposures) <= 0 or a.seconds <= 0 or a.repeats < 1 or a.buf < 2:
+    if min(a.widths + a.heights + a.exposures) <= 0 or a.seconds <= 0 or a.repeats < 1 or a.buf < 2 or a.warmup < 0 or a.precondition_seconds < 0:
         p.error('Dimensions, exposure, duration and repeats must be positive; buf >= 2')
     a.out = a.out.resolve()
     a.out.mkdir(parents=True, exist_ok=False)
@@ -124,32 +129,35 @@ def main():
             camera.set('AcquisitionMode', 'Continuous')
             camera.set('OffsetX', 0)
             camera.set('OffsetY', 0)
-            camera.set('PixelFormat', 'Mono8')
-            for width in a.widths:
-                camera.set('Width', width)
-                for height in a.heights:
-                    camera.set('Height', height)
-                    for exposure in a.exposures:
-                        camera.set('ExposureTime', exposure)
-                        for repeat in range(a.repeats):
-                            # Alternate order between repetitions to reduce order bias.
-                            for mode in (['discard', 'copy'] if repeat % 2 == 0 else ['copy', 'discard']):
-                                name = f'w{width}_h{height}_e{exposure}_{mode}_r{repeat+1}'
-                                path = a.out / (name + '.json')
-                                print(name, flush=True)
-                                camera.command(f'bench --mode {mode} -t {a.seconds} --warmup 16 --buf {a.buf} --json {path}', timeout=a.seconds+30)
-                                rows = json.loads(path.read_text())
-                                if len(rows) != 1:
-                                    raise RuntimeError(f'Unexpected report: {path}')
-                                row = rows[0]
-                                if row.get('error') or row.get('frames', 0) < 2:
-                                    raise RuntimeError(f'Failed benchmark: {row}')
-                                if (row['width'], row['height'], float(row['exposure']), row['mode']) != (width, height, exposure, mode):
-                                    raise RuntimeError(f'Benchmark configuration mismatch: {row}')
-                                row.update(repeat=repeat+1, report=path.name)
-                                results.append(row)
-                                (a.out / 'results.json').write_text(json.dumps(results, indent=2))
-                                print(f"  {row['delivered_fps']:.2f} fps, dropped={row['dropped']}, timeouts={row['timeouts']}", flush=True)
+            for pixel_format in a.formats:
+                camera.set('PixelFormat', pixel_format)
+                for width in a.widths:
+                    camera.set('Width', width)
+                    for height in a.heights:
+                        camera.set('Height', height)
+                        for exposure in a.exposures:
+                            camera.set('ExposureTime', exposure)
+                            if a.precondition_seconds:
+                                camera.command(f'bench --mode discard -t {a.precondition_seconds} --warmup 0 --buf {a.buf} --no-json', timeout=a.precondition_seconds+30)
+                            for repeat in range(a.repeats):
+                                # Alternate order between repetitions to reduce order bias.
+                                for mode in (a.modes if repeat % 2 == 0 else list(reversed(a.modes))):
+                                    name = f'{pixel_format}_w{width}_h{height}_e{exposure}_{mode}_r{repeat+1}'
+                                    path = a.out / (name + '.json')
+                                    print(name, flush=True)
+                                    camera.command(f'bench --mode {mode} -t {a.seconds} --warmup {a.warmup} --buf {a.buf} --json {path}', timeout=a.seconds+30)
+                                    rows = json.loads(path.read_text())
+                                    if len(rows) != 1:
+                                        raise RuntimeError(f'Unexpected report: {path}')
+                                    row = rows[0]
+                                    if row.get('error') or row.get('frames', 0) < 2:
+                                        raise RuntimeError(f'Failed benchmark: {row}')
+                                    if (row.get('format'), row['width'], row['height'], float(row['exposure']), row['mode']) != (pixel_format, width, height, exposure, mode):
+                                        raise RuntimeError(f'Benchmark configuration mismatch: {row}')
+                                    row.update(repeat=repeat+1, report=path.name)
+                                    results.append(row)
+                                    (a.out / 'results.json').write_text(json.dumps(results, indent=2))
+                                    print(f"  {row['delivered_fps']:.2f} fps, dropped={row['dropped']}, timeouts={row['timeouts']}", flush=True)
         except BaseException as exc:
             errors.append(f'{type(exc).__name__}: {exc}')
             raise
